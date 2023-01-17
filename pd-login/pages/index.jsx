@@ -1,8 +1,20 @@
+import { useEffect } from 'react'
+
 import Head from 'next/head'
-import Login from './login'
-import Register from './register'
+import { useRouter } from 'next/router'
+
+import { useSelector } from 'react-redux'
+import GuestPage from './guest'
+import HomePage from './home'
 
 export default function Home() {
+    const user = useSelector((state) => state.AuthReducer.authData)
+    const router = useRouter()
+
+    useEffect(() => {
+        user ? router.push('/home') : router.push('/login')
+    }, [])
+
     return (
         <>
             <Head>
@@ -11,8 +23,22 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
-            <h1>Hello</h1>
         </>
+
     )
+
+    // // Guest
+    // function Guest() {
+    //     return (
+    //         <GuestPage />
+    //     )
+    // }
+
+    // // Authorize User
+    // function User() {
+    //     return (
+    //         <HomePage />
+    //     )
+    // }
+
 }

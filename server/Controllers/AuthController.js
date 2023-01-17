@@ -9,8 +9,8 @@ export const registerUser = async (req, res) => {
     // Salt is the amount of hasing of amount of altering the given string
     const salt = await bcrypt.genSalt(10)
     const hashedPass = await bcrypt.hash(req.body.password, salt)
-
     req.body.password = hashedPass
+    
     const newUser = new UserModel(req.body);
     const { email } = req.body
 

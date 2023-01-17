@@ -36,8 +36,12 @@ a {
 
 @layer components {
   .button-primary {
-    @apply bg-primary-blue text-white border-2 border-primary-blue text-base font-medium py-2 px-[4rem] rounded-sm self-start 
+    @apply bg-primary-blue text-white border-2 border-primary-blue text-base font-medium py-2 px-[4rem] rounded-sm md:self-start 
       hover:text-primary-blue hover:bg-transparent duration-200;
+  }
+
+  .button-primary:disabled {
+    @apply bg-gray-500 pointer-events-none border-gray-500 text-gray-200
   }
 
   .button-secondary {

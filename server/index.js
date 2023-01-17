@@ -22,6 +22,8 @@ app.use('/images', express.static("images"))
 // Middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+
+// to allow sending request to cross origin, e.g localhost:3000 to localhost:5000 
 app.use(cors())
 
 dotenv.config()
