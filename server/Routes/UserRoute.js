@@ -1,6 +1,7 @@
 import express from 'express'
 
 import { getUser, updateUser, getAllUsers } from '../Controllers/UserController.js'
+import authMiddleWare from '../middleware/AuthMiddleware.js';
 
 const router = express.Router()
 
@@ -10,7 +11,7 @@ router.get('/:id', getUser)
 router.get('/', getAllUsers)
 
 // Put for update
-router.put('/:id', updateUser)
+router.put('/:id', authMiddleWare, updateUser)
 
 // router.delete('/:id', deleteUser)
 

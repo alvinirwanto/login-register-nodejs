@@ -10,7 +10,7 @@ export const registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10)
     const hashedPass = await bcrypt.hash(req.body.password, salt)
     req.body.password = hashedPass
-    
+
     const newUser = new UserModel(req.body);
     const { email } = req.body
 
@@ -23,9 +23,10 @@ export const registerUser = async (req, res) => {
 
         const user = await newUser.save()
 
-        const token = jwt.sign({
-            email: user.email, id: user._id
-        }, process.env.JWT_KEY, { expiresIn: '1h' })
+        const token = jwt.sign(
+            { email: user.email, id: user._id },
+            process.env.JWT_KEY,
+            { expiresIn: '1h' })
 
         res.status(200).json({ user, token });
     } catch (error) {
@@ -50,9 +51,10 @@ export const loginUser = async (req, res) => {
             } else {
                 const token = jwt.sign({
                     email: user.email, id: user._id
-                }, process.env.JWT_KEY, { expiresIn: '1h' })
+                }, process.env.JWT_KEY,
+                    { expiresIn: '1h' })
 
-                res.status(200).json({user, token})
+                res.status(200).json({ user, token })
             }
 
         } else {
