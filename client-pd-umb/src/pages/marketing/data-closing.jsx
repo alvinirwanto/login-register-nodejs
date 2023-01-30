@@ -6,10 +6,14 @@ const DataClosing = () => {
     return (
         <div className='w-full h-screen flex justify-center items-center'>
             {
-                user.role
-            }
+                user.role === 'marketing'
+                    ?
+                    <h1>Hello</h1>
 
-            closing coyy
+                    :
+
+                    <h2>Hello kalo bukan orangnya</h2>
+            }
         </div>
     )
 }

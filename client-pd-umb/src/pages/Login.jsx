@@ -7,9 +7,9 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { FiEye } from 'react-icons/fi'
 import { FiEyeOff } from 'react-icons/fi'
+import { ImArrowLeft2 } from 'react-icons/im'
+
 import { logIn } from '../action/AuthAction'
-
-
 
 const Login = () => {
 
@@ -47,6 +47,16 @@ const Login = () => {
 
     return (
         <div className='bg-gray-300 w-full h-screen flex items-center justify-center'>
+
+            <a
+                href='/'
+                className='flex justify-center items-center gap-3 absolute top-5 left-10 group cursor-pointer'>
+                <div className='bg-primary-blue border-2 border-primary-blue p-3 rounded-full flex justify-center items-center group-hover:bg-transparent duration-300'>
+                    <ImArrowLeft2 className='text-white text-lg group-hover:text-primary-blue active:text-primary-blue' />
+                </div>
+                <p className='text-primary-blue font-medium opacity-0 group-hover:opacity-100 duration-300'>Back to Home</p>
+            </a>
+
             <div className='bg-white shadow-xl rounded-md w-full max-w-[380px] md:max-w-[740px] xl:max-w-[900px] md:h-[60%] xl:h-[70%] mx-auto overflow-clip'>
                 <div className='grid grid-cols-1 md:grid-cols-[1fr_1.5fr] xl:grid-cols-2 md:gap-4 h-full'>
 
