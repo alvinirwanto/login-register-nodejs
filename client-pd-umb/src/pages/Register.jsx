@@ -43,7 +43,7 @@ const Register = () => {
 
     // Submit
     const handleSubmit = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
 
         // Check the password and the confirm password is same or not
         data.password === data.confirmPassword
@@ -53,13 +53,14 @@ const Register = () => {
     }
 
     const { user } = useSelector(state => state.authReducer.authData);
+    const loading = useSelector((state) => state.authReducer.loading)
 
     return (
         <div className='bg-gray-300 w-full h-screen flex items-center justify-center'>
 
-            <a 
-            href='/'
-            className='flex justify-center items-center gap-3 absolute top-5 left-10 group cursor-pointer'>
+            <a
+                href='/'
+                className='flex justify-center items-center gap-3 absolute top-5 left-10 group cursor-pointer'>
                 <div className='bg-primary-blue border-2 border-primary-blue p-3 rounded-full flex justify-center items-center group-hover:bg-transparent duration-300'>
                     <ImArrowLeft2 className='text-white text-lg group-hover:text-primary-blue active:text-primary-blue' />
                 </div>
@@ -133,7 +134,9 @@ const Register = () => {
                                     <span className={confirmPass ? 'hidden' : 'block text-rose-600 text-sm -mt-6'}>
                                         * Confirm Password in not same
                                     </span>
-                                    <button className='button-primary mt-8 md:mt-0' type='submit'>Register</button>
+                                    <button className='button-primary mt-8 md:mt-0' type='submit' disabled={loading} >
+                                        {loading ? "loading ... " : "Register"}
+                                    </button>
                                 </form>
 
                             </div>
@@ -153,8 +156,8 @@ const Register = () => {
                                         />
                                     </div>
                                     <div className='flex flex-col gap-4'>
-                                        <h1 className='text-5xl xl:text-7xl font-bold break-words text-white'>Hello Admin.</h1>
-                                        <p className='text-base text-white'>Tambahkan user baru untuk dapat mengakses Pangkalan Data Universitas Mercu Buana</p>
+                                        <h1 className='text-5xl xl:text-7xl font-bold break-words text-white'>Hello {user.username}.</h1>
+                                        <p className='text-base text-white'>Tambahkan user baru yang dapat mengakses Pangkalan Data Universitas Mercu Buana</p>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +166,7 @@ const Register = () => {
                     </div>
                 )
                     :
-                    <h1>Lu bukan admin</h1>
+                    <h1>Maaf anda bukan admin</h1>
             }
         </div>
     )

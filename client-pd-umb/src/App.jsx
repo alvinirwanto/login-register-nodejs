@@ -6,6 +6,8 @@ import Navbar from './components/Navbar';
 import Register from './pages/Register';
 import DataClosing from './pages/marketing/data-closing';
 import Guest from './pages/Guest';
+import ResetPass from './pages/Profile';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -48,10 +50,16 @@ function App() {
                     path='/marketing/data-closing'
                     element={user ? <DataClosing /> : <Navigate to='/login' />}
                 />
-                {/* <Route
+
+                <Route
+                    path='/reset-password/:id'
+                    element={user ? <ResetPass /> : <Navigate to='../login' />}
+                />
+
+                <Route
                     path='/profile/:id'
                     element={user ? <Profile /> : <Navigate to='../auth' />}
-                /> */}
+                />
             </Routes>
 
         </div>

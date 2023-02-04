@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -7,7 +7,6 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 import { BiX } from 'react-icons/bi'
 
 import { logout } from '../action/AuthAction'
-
 
 const Navbar = () => {
 
@@ -23,14 +22,21 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', addShadowNav);
     })
 
+
+    // Redux
     const dispatch = useDispatch()
 
     const { user } = useSelector(state => state.authReducer.authData);
 
+
+    // To save the file
+    const serverPublic = import.meta.env.VITE_PUBLIC_FOLDER
+
+
+    // Log Out
     const handleLogOut = () => {
         dispatch(logout())
     }
-
 
     // Pop up log out
     const [logOut, setLogOut] = useState(false)
@@ -46,23 +52,23 @@ const Navbar = () => {
                         <img
                             alt='logo UMB'
                             src={shadowNav ? '/LogoUMB/logo-umb-full.png' : '/LogoUMB/logo-umb-full.png'}
-                            className={`${shadowNav ? 'w-8 h-8 md:w-[3rem] md:h-[3rem] xl:h-[3.5rem] xl:w-[3.5rem]' : 'w-[3rem] h-[3rem] md:w-[5rem] md:h-[5rem] xl:h-[6rem] xl:w-[6rem]'} duration-500 cursor-pointer`}
+                            className={`${shadowNav ? 'w-8 h-8 md:w-[3rem] md:h-[3rem] xl:h-[3.5rem] xl:w-[3.5rem]' : 'w-[3rem] h-[3rem] md:w-[5rem] md:h-[5rem] xl:h-[5rem] xl:w-[5rem]'} duration-500 cursor-pointer`}
                         />
                     </a>
                     <div className={`border-l-2 border-primary-blue flex flex-col justify-center px-2 md:px-5 ${shadowNav ? 'py-2' : 'py-1 md:py-1'}`}>
-                        <p className='text-xs md:text-base xl:text-lg font-semibold'>Pangkalan Data</p>
-                        <p className='text-sm md:text-lg xl:text-lg font-semibold text-primary-blue'>Universitas Mercu Buana</p>
+                        <p className='text-xs md:text-base xl:text-md font-semibold'>Pangkalan Data</p>
+                        <p className='text-sm md:text-lg xl:text-md font-semibold text-primary-blue'>Universitas Mercu Buana</p>
                     </div>
                 </div>
                 <div className='block md:hidden'>
                     <FiMenu className='text-2xl' />
                 </div>
-                <div className='flex items-center gap-[3rem]'>
+                <div className='flex items-center gap-[3rem] text-sm'>
 
                     <div className={user.role === 'admin' || user.role === 'keuangan' ? 'hidden md:block relative group'
                         : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-2 justify-center items-center'>
+                            <div className='flex gap-2 justify-center items-center text-sm'>
                                 <span>Keuangan</span>
                                 <MdKeyboardArrowDown />
                             </div>
@@ -81,7 +87,7 @@ const Navbar = () => {
                     <div className={user.role === 'admin' || user.role === 'mahasiswa' ? 'hidden md:block relative group'
                         : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-2 justify-center items-center'>
+                            <div className='flex gap-2 justify-center items-center text-sm'>
                                 <span>Mahasiswa</span>
                                 <MdKeyboardArrowDown />
                             </div>
@@ -102,7 +108,7 @@ const Navbar = () => {
                     <div className={user.role === 'admin' || user.role === 'marketing' ? 'hidden md:block relative group'
                         : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-2 justify-center items-center'>
+                            <div className='flex gap-2 justify-center items-center text-sm'>
                                 <span>Marketing</span>
                                 <MdKeyboardArrowDown />
                             </div>
@@ -120,7 +126,7 @@ const Navbar = () => {
                     <div className={user.role === 'admin' || user.role === 'pegawai' ? 'hidden md:block relative group'
                         : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-2 justify-center items-center'>
+                            <div className='flex gap-2 justify-center items-center text-sm'>
                                 <span>Pegawai</span>
                                 <MdKeyboardArrowDown />
                             </div>
@@ -139,7 +145,7 @@ const Navbar = () => {
                     <div className={user.role === 'admin' || user.role === 'projects' ? 'hidden md:block relative group'
                         : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-2 justify-center items-center'>
+                            <div className='flex gap-2 justify-center items-center text-sm'>
                                 <span>Projects</span>
                                 <MdKeyboardArrowDown />
                             </div>
@@ -155,13 +161,11 @@ const Navbar = () => {
                     </div>
 
                     <div className='hidden md:block relative group' onClick={() => setShowSidebar(true)}>
-                        <button className="w-9 h-9 bg-black rounded-full">
+                        <button className="w-[2.2rem] h-[2.2rem] rounded-full overflow-clip">
                             <img
-                                src='/defaultProfile.png'
+                                src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
                                 alt='profile'
-                                width={500}
-                                height={500}
-                                className='object-cover'
+                                className='object-cover w-full h-full'
                             />
                         </button>
                     </div>
@@ -190,15 +194,18 @@ const Navbar = () => {
                             <BiX className='text-semibold text-4xl cursor-pointer' onClick={() => setShowSidebar(false)} />
                         </div>
                         <div className='flex flex-col gap-8 justify-center items-center'>
-                            <div className="w-[5rem] h-[5rem] bg-black rounded-full">
+                            <div
+                                className="w-[5rem] h-[5rem] bg-black rounded-full relative overflow-clip">
                                 <img
-                                    src='/defaultProfile.png'
+                                    src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
                                     alt='profile'
-                                    width={500}
-                                    height={500}
-                                    className='object-cover'
+                                    className='object-cover w-full h-full'
                                 />
+                                {/* <div className='bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer'>
+                                    <p className='text-xs text-white text-center'>Ganti foto</p>
+                                </div> */}
                             </div>
+
                             <div className='text-center'>
                                 <p className='font-semibold text-xl capitalize'>{user.username}</p>
                                 <p>{user.email}</p>
@@ -207,16 +214,19 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className='flex flex-col gap-1 text-start'>
-                        <button className='p-4 hover:bg-gray-100'>Reset Password</button>
+                        <a href={`/profile/${user._id}`}
+                            className='p-4 hover:bg-gray-100 text-center cursor-pointer'
+                        >
+                            Edit Profile
+                        </a>
                         {
                             user.role === 'admin' && (
-                                <button className='p-4 hover:bg-gray-100'>Add New User</button>
+                                <a href='/register' className='p-4 hover:bg-gray-100 text-center'>Add New User</a>
                             )
                         }
                         <button onClick={() => setLogOut(true)} className='p-3 bg-rose-500 border-2 border-rose-500 hover:bg-transparent hover:text-rose-500 duration-300 text-white'>Log Out</button>
                     </div>
                 </div>
-
 
             </div>
 

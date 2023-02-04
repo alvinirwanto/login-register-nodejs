@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import Footer from '../components/Footer'
+import { useSelector } from 'react-redux'
 import Layout from '../components/Layout'
-import Navbar from '../components/Navbar'
+import HeroSection from '../sections/HeroSection'
 
 const Home = () => {
 
@@ -10,6 +8,8 @@ const Home = () => {
 
     return (
         <Layout pageTitle='Home'>
+
+            <HeroSection />
             <p className='w-full h-screen flex justify-center items-center'>{user.role}</p>
         </Layout>
     )

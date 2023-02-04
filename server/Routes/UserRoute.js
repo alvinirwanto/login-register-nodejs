@@ -11,7 +11,7 @@ router.get('/:id', getUser)
 router.get('/', getAllUsers)
 
 // Put for update
-router.put('/:id', authMiddleWare, updateUser)
+router.put('/:id', updateUser)
 
 // router.delete('/:id', deleteUser)
 
