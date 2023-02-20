@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import Layout from '../components/Layout'
 import HeroSection from '../sections/HeroSection'
+import DataMahasiswa from '../sections/DataMahasiswa'
 
 const Home = () => {
 
@@ -8,9 +9,8 @@ const Home = () => {
 
     return (
         <Layout pageTitle='Home'>
-
             <HeroSection />
-            <p className='w-full h-screen flex justify-center items-center'>{user.role}</p>
+            <DataMahasiswa />
         </Layout>
     )
 }

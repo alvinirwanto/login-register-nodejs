@@ -10,6 +10,7 @@ import { FiEyeOff } from 'react-icons/fi'
 import { ImArrowLeft2 } from 'react-icons/im'
 
 import { signUp } from '../action/AuthAction'
+import { Navigate } from 'react-router-dom'
 
 const Register = () => {
 
@@ -48,8 +49,10 @@ const Register = () => {
         // Check the password and the confirm password is same or not
         data.password === data.confirmPassword
             // Send the data to be proceed by backend using Dispatch from Redux
-            ? dispatch(signUp(data))
-            : setConfirmPass(false)
+            ?
+            dispatch(signUp(data))
+            :
+            setConfirmPass(false)
     }
 
     const { user } = useSelector(state => state.authReducer.authData);

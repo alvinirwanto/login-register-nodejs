@@ -12,7 +12,7 @@ const Layout = ({ children, pageTitle }) => {
     return (
         <>
             <Navbar />
-            <main className='px-4 md:px-8 xl:px-[5rem] py-[5rem]'>
+            <main className='px-4 md:px-8 xl:px-[5rem] pb-[5rem]'>
                 {children}
             </main>
             <Footer />

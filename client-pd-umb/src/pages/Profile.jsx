@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
-import * as UserApi from '../api/UserRequest.js'
 
 import { ImArrowLeft2 } from 'react-icons/im'
 import { FiEye } from 'react-icons/fi'
@@ -19,14 +18,9 @@ const Profile = () => {
     // Check the password and the confirm password is same or not
     const [confirmPass, setConfirmPass] = useState(true)
 
-
-
-    const [profileUser, setProfileUser] = useState({});
     const { user } = useSelector((state) => state.authReducer.authData);
 
     const [formData, setFormData] = useState(user)
-
-    console.log(formData)
 
     const [profileImage, setProfileImage] = useState(null);
 
@@ -85,7 +79,8 @@ const Profile = () => {
                 <form
                     className='w-full max-w-[40rem] mx-auto shadow-lg p-[5rem] rounded-md flex flex-col gap-4'
                 >
-                    <div className='flex items-center w-full'>
+                    {/* <h2 className='font-semibold text-xl'>Ganti Nama</h2>
+                    <div className='flex items-center w-full '>
                         <input
                             type='text'
                             placeholder='Username'
@@ -94,8 +89,9 @@ const Profile = () => {
                             value={formData.username}
                             onChange={handleChange}
                         />
-                    </div>
-                    <h2 className='font-semibold text-xl'>Ganti Password</h2>
+                    </div> */}
+
+                    <h2 className='font-semibold text-xl mt-9'>Ganti Password</h2>
                     <div className='flex items-center w-full'>
                         <input
                             type={visiblePass ? "password" : "text"}
@@ -125,8 +121,8 @@ const Profile = () => {
                         * Confirm Password in not same
                     </span>
 
-                    <h2 className='font-semibold text-xl mt-9'>Ganti Foto Profil</h2>
-                    <input type="file" name="profileImage" onChange={onImageChange} />
+                    {/* <h2 className='font-semibold text-xl mt-9'>Ganti Foto Profil</h2>
+                    <input type="file" name="profileImage" onChange={onImageChange} /> */}
 
                     <button
                         className='button-primary mt-8 self-end'
