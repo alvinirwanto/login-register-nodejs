@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  backend:
+    container_name: pdbackend
+    build:
+      context: backend/
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - 5000:5000
+
+  frontend:
+    container_name: pdfrontend
+    build:
+      context: frontend/
+      dockerfile: Dockerfile
+      args:
+        - BASEURL=${BASEURL}
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    links:
+      - backend
+
