@@ -223,7 +223,7 @@ const Navbar = () => {
             
 
             {/* Modal Log Out */}
-            <div className={logOut ? 'fixed bg-shadow-modal w-screen h-screen z-[300] flex justify-center items-center' : 'hidden'}>
+            <div className={logOut ? 'fixed top-0 bg-shadow-modal w-screen h-screen z-[500] flex justify-center items-center' : 'hidden'}>
                 <div className='bg-white px-9 py-[3rem] rounded-md flex flex-col gap-9 items-center'>
                     <p className='text-xl font-semibold'>Apakah kamu yakin untuk keluar?</p>
                     <div className='flex items-center gap-8 font-semibold'>
