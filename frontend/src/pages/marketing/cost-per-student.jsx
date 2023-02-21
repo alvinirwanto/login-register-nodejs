@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 
-const MarketingCost = () => {
+const CostPerStudent = () => {
     return (
         <Layout
-            pageTitle='Marketing Cost'
+            pageTitle='Cost per Student'
         >
             <div className='pt-[10rem]'>
                 <iframe
@@ -18,4 +18,4 @@ const MarketingCost = () => {
     )
 }
 
-export default MarketingCost
+export default CostPerStudent

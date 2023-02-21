@@ -159,7 +159,7 @@ const Navbar = () => {
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
                                     <a href='/marketing/data-closing' className='hover:bg-gray-100 p-4'>Data Closing</a>
-                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 p-4'>Marketing Cost</a>
+                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 p-4'>Cost per Student</a>
                                 </div>
                             </div>
                         </div>
@@ -219,6 +219,8 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
+
+            
 
             {/* Modal Log Out */}
             <div className={logOut ? 'fixed bg-shadow-modal w-screen h-screen z-[300] flex justify-center items-center' : 'hidden'}>

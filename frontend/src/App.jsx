@@ -12,11 +12,11 @@ import PermintaanPembayaran from './pages/keuangan/permintaan-pembayaran';
 import LaporanKeuangan from './pages/keuangan/laporan-keuangan';
 import Mahasiswa from './pages/mahasiswa/mahasiswa';
 import UangKuliah from './pages/mahasiswa/uang-kuliah';
-import MarketingCost from './pages/marketing/marketing-cost';
 import Presensi from './pages/pegawai/presensi';
 import RasioDosen from './pages/pegawai/rasio-dosen';
 import HambalangFarm from './pages/proyek/hambalang-farm';
 import Akreditasi from './pages/akreditasi/akreditasi';
+import CostPerStudent from './pages/marketing/cost-per-student';
 
 
 function App() {
@@ -44,16 +44,6 @@ function App() {
                     path='/'
                     element={user ? <Home /> : <Guest />}
                 />
-
-                {/* <Route
-                    path='/guest'
-                    element={<Guest />}
-                />
-
-                <Route
-                    path='/home'
-                    element={user ? <Home /> : <Navigate to='../login' />}
-                /> */}
 
                 <Route
                     path='/reset-password/:id'
@@ -93,8 +83,8 @@ function App() {
                 />
 
                 <Route
-                    path='/marketing/marketing-cost'
-                    element={user ? <MarketingCost /> : <Navigate to='/login' />}
+                    path='/marketing/cost-per-student'
+                    element={user ? <CostPerStudent /> : <Navigate to='/login' />}
                 />
 
                 <Route
