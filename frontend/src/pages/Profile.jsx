@@ -43,19 +43,19 @@ const Profile = () => {
 
     // form submission
     const handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         let UserData = formData;
-        const data = new FormData();
-        const fileName = Date.now() + profileImage.name;
-        data.append("name", fileName);
-        data.append("file", profileImage);
-        UserData.profilePicture = fileName;
-        try {
-            dispatch(uploadImage(data));
-        } catch (err) {
-            console.log(err);
-        }
+        // const data = new FormData();
+        // const fileName = Date.now() + profileImage.name;
+        // data.append("name", fileName);
+        // data.append("file", profileImage);
+        // UserData.profilePicture = fileName;
+        // try {
+        //     dispatch(uploadImage(data));
+        // } catch (err) {
+        //     console.log(err);
+        // }
         // // Check the password and the confirm password is same or not
         // formData.password === formData.confirmPassword
         //     // Send the data to be proceed by backend using Dispatch from Redux
