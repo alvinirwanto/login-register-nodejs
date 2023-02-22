@@ -56,7 +56,7 @@ const Register = () => {
     }
 
     const { user } = useSelector(state => state.authReducer.authData);
-    const loading = useSelector((state) => state.authReducer.loading)
+    // const loading = useSelector((state) => state.authReducer.loading)
 
     return (
         <div className='bg-gray-300 w-full h-screen flex items-center justify-center'>
@@ -137,8 +137,9 @@ const Register = () => {
                                     <span className={confirmPass ? 'hidden' : 'block text-rose-600 text-sm -mt-6'}>
                                         * Confirm Password in not same
                                     </span>
-                                    <button className='button-primary mt-8 md:mt-0' type='submit' disabled={loading} >
-                                        {loading ? "loading ... " : "Register"}
+                                    <button className='button-primary mt-8 md:mt-0' type='submit' >
+                                        {/* {loading ? "loading ... " : "Register"} */}
+                                        Register
                                     </button>
                                 </form>
 

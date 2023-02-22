@@ -17,6 +17,7 @@ import RasioDosen from './pages/pegawai/rasio-dosen';
 import HambalangFarm from './pages/proyek/hambalang-farm';
 import Akreditasi from './pages/akreditasi/akreditasi';
 import CostPerStudent from './pages/marketing/cost-per-student';
+import Success from './Success';
 
 
 function App() {
@@ -105,6 +106,11 @@ function App() {
                 <Route
                     path='/akreditasi'
                     element={user ? <Akreditasi /> : <Navigate to='/login' />}
+                />
+
+                <Route
+                    path='/success'
+                    element={ <Success />}
                 />
             </Routes>
 
