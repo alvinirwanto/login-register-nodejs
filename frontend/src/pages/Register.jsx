@@ -58,6 +58,8 @@ const Register = () => {
     const { user } = useSelector(state => state.authReducer.authData);
     // const loading = useSelector((state) => state.authReducer.loading)
 
+    const [activeAdmin, setActiveAdmin] = useState(false)
+
     return (
         <div className='bg-gray-300 w-full h-screen flex items-center justify-center'>
 
@@ -72,7 +74,7 @@ const Register = () => {
 
             {
                 user.role === 'admin' ? (
-                    <div className='bg-white shadow-xl rounded-md w-full max-w-[380px] md:max-w-[740px] xl:max-w-[1100px] md:h-[70%] xl:h-[80%] mx-auto overflow-clip'>
+                    <div className='bg-white shadow-xl rounded-md w-full max-w-[380px] md:max-w-[740px] xl:max-w-[1100px] md:h-[70%] xl:h-[93%] mx-auto overflow-clip'>
                         <div className='grid grid-cols-1 md:grid-cols-[2fr_1fr] xl:grid-cols-2 md:gap-4 h-full'>
 
                             <div className='px-8 py-[3rem] md:p-[3rem] flex flex-col justify-center gap-[3rem]'>
@@ -101,13 +103,96 @@ const Register = () => {
                                         onChange={handleChange}
                                     />
 
-                                    <input
+                                    {/* <input
                                         type="text"
                                         placeholder='Role'
                                         name='role'
                                         className='input-form text-base'
                                         onChange={handleChange}
-                                    />
+                                    /> */}
+
+                                    <div className='grid grid-cols-2 accent-primary-blue'>
+                                        <p className='font-semibold mb-2'>Menu</p><br />
+
+                                        <div className='flex justify-start items-center gap-2'>
+                                            <input
+                                                type="checkbox"
+                                                name="role"
+                                                value="admin"
+                                                className='cursor-pointer scale-150'
+                                                onChange={handleChange}
+                                                onClick={() => setActiveAdmin(!activeAdmin)}
+                                            />
+                                            <label>Admin</label>
+                                        </div>
+                                        <div className='flex justify-start items-center gap-2'>
+                                            <input
+                                                type="checkbox"
+                                                name="role2"
+                                                value="keuangan"
+                                                className='cursor-pointer scale-150'
+                                                onChange={handleChange}
+                                                disabled={activeAdmin}
+                                            />
+                                            <label>Keuangan</label>
+                                        </div>
+                                        <div className='flex justify-start items-center gap-2'>
+                                            <input
+                                                type="checkbox"
+                                                name="role3"
+                                                value="mahasiswa"
+                                                className='cursor-pointer scale-150'
+                                                onChange={handleChange}
+                                                disabled={activeAdmin}
+
+                                            />
+                                            <label>Mahasiswa</label>
+                                        </div>
+                                        <div className='flex justify-start items-center gap-2'>
+                                            <input
+                                                type="checkbox"
+                                                name="role4"
+                                                value="marketing"
+                                                className='cursor-pointer scale-150'
+                                                onChange={handleChange}
+                                                disabled={activeAdmin}
+                                            />
+                                            <label>Marketing</label>
+                                        </div>
+                                        <div className='flex justify-start items-center gap-2'>
+                                            <input
+                                                type="checkbox"
+                                                name="role5"
+                                                value="pegawai"
+                                                className='cursor-pointer scale-150'
+                                                onChange={handleChange}
+                                                disabled={activeAdmin}
+                                            />
+                                            <label>Pegawai</label>
+                                        </div>
+                                        <div className='flex justify-start items-center gap-2'>
+                                            <input
+                                                type="checkbox"
+                                                name="role6"
+                                                value="akreditasi"
+                                                className='cursor-pointer scale-150'
+                                                onChange={handleChange}
+                                                disabled={activeAdmin}
+                                            />
+                                            <label>Akreditasi</label>
+                                        </div>
+                                        <div className='flex justify-start items-center gap-2'>
+                                            <input
+                                                type="checkbox"
+                                                name="role7"
+                                                value="projects"
+                                                className='cursor-pointer scale-150'
+                                                onChange={handleChange}
+                                                disabled={activeAdmin}
+                                            />
+                                            <label>Projects</label>
+                                        </div>
+                                    </div>
 
                                     <div className='flex items-center w-full'>
                                         <input

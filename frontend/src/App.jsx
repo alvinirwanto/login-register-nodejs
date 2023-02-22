@@ -17,7 +17,7 @@ import RasioDosen from './pages/pegawai/rasio-dosen';
 import HambalangFarm from './pages/proyek/hambalang-farm';
 import Akreditasi from './pages/akreditasi/akreditasi';
 import CostPerStudent from './pages/marketing/cost-per-student';
-import Success from './Success';
+import Success from './pages/Success';
 
 
 function App() {

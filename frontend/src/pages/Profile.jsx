@@ -8,6 +8,7 @@ import { FiEye } from 'react-icons/fi'
 import { FiEyeOff } from 'react-icons/fi'
 import { uploadImage } from '../action/UploadAction'
 import { updateUser } from '../action/UserAction'
+import { logout } from '../action/AuthAction'
 
 const Profile = () => {
 
@@ -62,6 +63,7 @@ const Profile = () => {
         //     ? dispatch(updateUser(param.id, UserData))
         //     : setConfirmPass(false)
         dispatch(updateUser(param.id, UserData))
+        dispatch(logout())
     };
 
     return (
