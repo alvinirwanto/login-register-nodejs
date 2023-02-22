@@ -108,10 +108,10 @@ function App() {
                     element={user ? <Akreditasi /> : <Navigate to='/login' />}
                 />
 
-                <Route
+                {/* <Route
                     path='/success'
                     element={ <Success />}
-                />
+                /> */}
             </Routes>
 
         </div>

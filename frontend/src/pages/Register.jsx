@@ -74,7 +74,7 @@ const Register = () => {
 
             {
                 user.role === 'admin' ? (
-                    <div className='bg-white shadow-xl rounded-md w-full max-w-[380px] md:max-w-[740px] xl:max-w-[1100px] md:h-[70%] xl:h-[93%] mx-auto overflow-clip'>
+                    <div className='bg-white shadow-xl rounded-md w-full max-w-[380px] md:max-w-[740px] xl:max-w-[1100px] md:h-[70%] xl:h-[95%] mx-auto overflow-clip'>
                         <div className='grid grid-cols-1 md:grid-cols-[2fr_1fr] xl:grid-cols-2 md:gap-4 h-full'>
 
                             <div className='px-8 py-[3rem] md:p-[3rem] flex flex-col justify-center gap-[3rem]'>
