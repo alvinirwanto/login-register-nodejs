@@ -245,18 +245,18 @@ const Navbar = () => {
                         </div>
                         <div className='flex flex-col gap-8 justify-center items-center'>
                             <div
-                                onClick={() => setShowEditPhoto(!showEditPhoto)}
+                                // onClick={() => setShowEditPhoto(!showEditPhoto)}
                                 className="w-[5rem] h-[5rem] bg-black rounded-full relative overflow-clip group">
                                 <img
                                     src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
                                     alt='profile'
                                     className='object-cover w-full h-full'
                                 />
-                                <div className={showEditPhoto ? 'hidden' : 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer'}>
+                                {/* <div className={showEditPhoto ? 'hidden' : 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer'}>
                                     <p className='text-xs text-white text-center'>
                                         Ganti Foto
                                     </p>
-                                </div>
+                                </div> */}
                             </div>
 
                             <form className={showEditPhoto ? 'flex flex-col justify-center' : 'hidden'}>
