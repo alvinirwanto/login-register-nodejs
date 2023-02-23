@@ -279,7 +279,7 @@ const Navbar = () => {
                                     </div>
                                 </div>
 
-                                <ul className='flex flex-col mt-6 text-base'>
+                                <ul className='flex flex-col mt-6 text-[15px]'>
                                     <li>
                                         <a href={`/profile/${user._id}`}
                                             className='hover:bg-gray-100 py-2 px-4 w-full flex'
@@ -298,7 +298,7 @@ const Navbar = () => {
                                         }
                                     </li>
                                     <li>
-                                        <button onClick={() => setLogOut(true)} className='flex w-full text-rose-500 text-base hover:bg-rose-500 hover:text-white duration-200 py-2 px-4'>
+                                        <button onClick={() => setLogOut(true)} className='flex w-full text-rose-500 hover:bg-rose-500 hover:text-white duration-200 py-2 px-4'>
                                             Log Out
                                         </button>
                                     </li>
