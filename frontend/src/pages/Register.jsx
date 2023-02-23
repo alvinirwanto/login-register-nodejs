@@ -24,20 +24,47 @@ const Register = () => {
 
     // For save the data
     const [data, setData] = useState({
-        username: "",
-        email: "",
-        role: "",
+        username: '',
+        email: '',
+        role: [],
+        // username: "",
+        // email: "",
+        // role: "",
+        // role2: "",
+        // role3: "",
+        // role4: "",
+        // role5: "",
+        // role6: "",
+        // role7: "",
         password: "",
         confirmPassword: ""
     })
 
     // For get the data
-    const handleChange = (e) => {
-        setData({
-            ...data,
-            [e.target.name]: e.target.value
-        })
+    const handleChange = (event) => {
+        const { name, value, checked } = event.target;
+
+        if (name === 'role') {
+            const updatedItems = checked ? [...data.role, value] : data.role.filter(item => item !== value);
+
+            setData(prevState => ({
+                ...prevState,
+                [name]: updatedItems
+            }));
+        } else {
+            setData(prevState => ({
+                ...prevState,
+                [name]: value
+            }));
+        }
     }
+
+    // const handleChange = (e) => {
+    //     setData({
+    //         ...data,
+    //         [e.target.name]: e.target.value
+    //     })
+    // }
 
     // Check the password and the confirm password is same or not
     const [confirmPass, setConfirmPass] = useState(true)
@@ -73,7 +100,7 @@ const Register = () => {
             </a>
 
             {
-                user.role === 'admin' ? (
+                user.role.includes('admin') ? (
                     <div className='bg-white shadow-xl rounded-md w-full max-w-[380px] md:max-w-[740px] xl:max-w-[1100px] md:h-[70%] xl:h-[95%] mx-auto overflow-clip'>
                         <div className='grid grid-cols-1 md:grid-cols-[2fr_1fr] xl:grid-cols-2 md:gap-4 h-full'>
 
@@ -121,6 +148,7 @@ const Register = () => {
                                                 value="admin"
                                                 className='cursor-pointer scale-150'
                                                 onChange={handleChange}
+                                                checked={data.role.includes('admin')}
                                                 onClick={() => setActiveAdmin(!activeAdmin)}
                                             />
                                             <label>Admin</label>
@@ -128,10 +156,11 @@ const Register = () => {
                                         <div className='flex justify-start items-center gap-2'>
                                             <input
                                                 type="checkbox"
-                                                name="role2"
+                                                name="role"
                                                 value="keuangan"
                                                 className='cursor-pointer scale-150'
                                                 onChange={handleChange}
+                                                checked={data.role.includes('keuangan')}
                                                 disabled={activeAdmin}
                                             />
                                             <label>Keuangan</label>
@@ -139,10 +168,11 @@ const Register = () => {
                                         <div className='flex justify-start items-center gap-2'>
                                             <input
                                                 type="checkbox"
-                                                name="role3"
+                                                name="role"
                                                 value="mahasiswa"
                                                 className='cursor-pointer scale-150'
                                                 onChange={handleChange}
+                                                checked={data.role.includes('mahasiswa')}
                                                 disabled={activeAdmin}
 
                                             />
@@ -151,10 +181,11 @@ const Register = () => {
                                         <div className='flex justify-start items-center gap-2'>
                                             <input
                                                 type="checkbox"
-                                                name="role4"
+                                                name="role"
                                                 value="marketing"
                                                 className='cursor-pointer scale-150'
                                                 onChange={handleChange}
+                                                checked={data.role.includes('marketing')}
                                                 disabled={activeAdmin}
                                             />
                                             <label>Marketing</label>
@@ -162,10 +193,11 @@ const Register = () => {
                                         <div className='flex justify-start items-center gap-2'>
                                             <input
                                                 type="checkbox"
-                                                name="role5"
+                                                name="role"
                                                 value="pegawai"
                                                 className='cursor-pointer scale-150'
                                                 onChange={handleChange}
+                                                checked={data.role.includes('pegawai')}
                                                 disabled={activeAdmin}
                                             />
                                             <label>Pegawai</label>
@@ -173,10 +205,11 @@ const Register = () => {
                                         <div className='flex justify-start items-center gap-2'>
                                             <input
                                                 type="checkbox"
-                                                name="role6"
+                                                name="role"
                                                 value="akreditasi"
                                                 className='cursor-pointer scale-150'
                                                 onChange={handleChange}
+                                                checked={data.role.includes('akreditasi')}
                                                 disabled={activeAdmin}
                                             />
                                             <label>Akreditasi</label>
@@ -184,10 +217,11 @@ const Register = () => {
                                         <div className='flex justify-start items-center gap-2'>
                                             <input
                                                 type="checkbox"
-                                                name="role7"
+                                                name="role"
                                                 value="projects"
                                                 className='cursor-pointer scale-150'
                                                 onChange={handleChange}
+                                                checked={data.role.includes('projects')}
                                                 disabled={activeAdmin}
                                             />
                                             <label>Projects</label>

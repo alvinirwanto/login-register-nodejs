@@ -106,15 +106,11 @@ const Navbar = () => {
                 </div>
                 <div className='flex items-center gap-[3rem] text-sm'>
 
-                    <div className={user.role === 'admin'
-                        || user.role2 === 'keuangan'
-                        || user.role3 === 'keuangan'
-                        || user.role4 === 'keuangan'
-                        || user.role5 === 'keuangan'
-                        || user.role6 === 'keuangan'
-                        || user.role7 === 'keuangan'
-                        ? 'hidden md:block relative group'
-                        : 'hidden'}>
+                    <div className={
+                        user.role.includes('admin')
+                            || user.role.includes('keuangan')
+                            ? 'hidden md:block relative group'
+                            : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
                             <div className='flex gap-2 justify-center items-center text-sm'>
                                 <span>Keuangan</span>
@@ -132,15 +128,11 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className={user.role === 'admin'
-                        || user.role2 === 'mahasiswa'
-                        || user.role3 === 'mahasiswa'
-                        || user.role4 === 'mahasiswa'
-                        || user.role5 === 'mahasiswa'
-                        || user.role6 === 'mahasiswa'
-                        || user.role7 === 'mahasiswa'
-                        ? 'hidden md:block relative group'
-                        : 'hidden'}>
+                    <div className={
+                        user.role.includes('admin')
+                            || user.role.includes('mahasiswa')
+                            ? 'hidden md:block relative group'
+                            : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
                             <div className='flex gap-2 justify-center items-center text-sm'>
                                 <span>Mahasiswa</span>
@@ -160,15 +152,11 @@ const Navbar = () => {
 
 
 
-                    <div className={user.role === 'admin'
-                        || user.role2 === 'marketing'
-                        || user.role3 === 'marketing'
-                        || user.role4 === 'marketing'
-                        || user.role5 === 'marketing'
-                        || user.role6 === 'marketing'
-                        || user.role7 === 'marketing'
-                        ? 'hidden md:block relative group'
-                        : 'hidden'}>
+                    <div className={
+                        user.role.includes('admin')
+                            || user.role.includes('marketing')
+                            ? 'hidden md:block relative group'
+                            : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
                             <div className='flex gap-2 justify-center items-center text-sm'>
                                 <span>Marketing</span>
@@ -186,15 +174,11 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className={user.role === 'admin'
-                        || user.role2 === 'pegawai'
-                        || user.role3 === 'pegawai'
-                        || user.role4 === 'pegawai'
-                        || user.role5 === 'pegawai'
-                        || user.role6 === 'pegawai'
-                        || user.role7 === 'pegawai'
-                        ? 'hidden md:block relative group'
-                        : 'hidden'}>
+                    <div className={
+                        user.role.includes('admin')
+                            || user.role.includes('pegawai')
+                            ? 'hidden md:block relative group'
+                            : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
                             <div className='flex gap-2 justify-center items-center text-sm'>
                                 <span>Pegawai</span>
@@ -212,28 +196,20 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className={user.role === 'admin'
-                        || user.role2 === 'akreditasi'
-                        || user.role3 === 'akreditasi'
-                        || user.role4 === 'akreditasi'
-                        || user.role5 === 'akreditasi'
-                        || user.role6 === 'akreditasi'
-                        || user.role7 === 'akreditasi'
-                        ? 'hidden md:block relative group'
-                        : 'hidden'}>
+                    <div className={
+                        user.role.includes('admin')
+                            || user.role.includes('akreditasi')
+                            ? 'hidden md:block relative group'
+                            : 'hidden'}>
                         <a href='/akreditasi' className='w-full text-sm bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold'>Akreditasi</a>
                     </div>
 
 
-                    <div className={user.role === 'admin'
-                        || user.role2 === 'projects'
-                        || user.role3 === 'projects'
-                        || user.role4 === 'projects'
-                        || user.role5 === 'projects'
-                        || user.role6 === 'projects'
-                        || user.role7 === 'projects'
-                        ? 'hidden md:block relative group'
-                        : 'hidden'}>
+                    <div className={
+                        user.role.includes('admin')
+                            || user.role.includes('projects')
+                            ? 'hidden md:block relative group'
+                            : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
                             <div className='flex gap-2 justify-center items-center text-sm'>
                                 <span>Projects</span>
@@ -323,7 +299,6 @@ const Navbar = () => {
                             <div className={showEditPhoto ? 'hidden' : 'text-center'}>
                                 <p className='font-semibold text-xl capitalize'>{user.username}</p>
                                 <p>{user.email}</p>
-                                <p className='mt-6 capitalize'>{user.role}</p>
                             </div>
                         </div>
                     </div>
@@ -334,11 +309,11 @@ const Navbar = () => {
                             Ganti Password
                         </a>
                         {
-                            user.role === 'admin' && (
+                            user.role.includes('admin') && (
                                 <a href='/register' className='p-4 hover:bg-gray-100 text-center'>Add New User</a>
                             )
                         }
-                        <button onClick={() => setLogOut(true)} className='p-3 bg-rose-500 border-2 border-rose-500 hover:bg-transparent hover:text-rose-500 duration-300 text-white'>Log Out</button>
+                        <button onClick={() => setLogOut(true)} className='p-3 bg-rose-500 border-2 border-rose-500 hover:bg-transparent hover:text-rose-500 duration-300 text-white rounded-sm'>Log Out</button>
                     </div>
                 </div>
 
