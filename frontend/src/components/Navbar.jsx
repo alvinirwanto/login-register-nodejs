@@ -121,8 +121,8 @@ const Navbar = () => {
                         <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
-                                    <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 p-4'>Pengajuan PP dan PUM</a>
-                                    <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 p-4'>Laporan Keuangan</a>
+                                    <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Pengajuan PP dan PUM</a>
+                                    <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
                                 </div>
                             </div>
                         </div>
@@ -143,8 +143,8 @@ const Navbar = () => {
                         <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
-                                    <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 p-4'>Data Mahasiswa</a>
-                                    <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 p-4'>Uang Kuliah</a>
+                                    <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
+                                    <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
                                 </div>
                             </div>
                         </div>
@@ -167,8 +167,8 @@ const Navbar = () => {
                         <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
-                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 p-4'>Data Closing</a>
-                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 p-4'>Cost per Student</a>
+                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Data Closing</a>
+                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
                                 </div>
                             </div>
                         </div>
@@ -189,8 +189,8 @@ const Navbar = () => {
                         <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
-                                    <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 p-4'>Rasio Dosen</a>
-                                    <a href='/pegawai/presensi' className='hover:bg-gray-100 p-4'>Presensi</a>
+                                    <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 py-3 px-4'>Rasio Dosen</a>
+                                    <a href='/pegawai/presensi' className='hover:bg-gray-100 py-3 px-4'>Presensi</a>
                                 </div>
                             </div>
                         </div>
@@ -220,13 +220,13 @@ const Navbar = () => {
                         <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
-                                    <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 p-4'>Hambalang Farm</a>
+                                    <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 py-3 px-4'>Hambalang Farm</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className='hidden md:block relative group' onClick={() => setShowSidebar(true)}>
+                    <div className='hidden md:block relative group'>
                         <button className="w-[2.2rem] h-[2.2rem] rounded-full overflow-clip">
                             <img
                                 src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
@@ -234,6 +234,77 @@ const Navbar = () => {
                                 className='object-cover w-full h-full'
                             />
                         </button>
+
+                        <div className="absolute -right-10 z-10 hidden bg-grey-200 group-hover:block">
+                            <div className="bg-white shadow-lg w-[390px] p-4">
+                                <div className='flex items-center gap-4'>
+                                    <div
+                                    // onClick={() => setShowEditPhoto(!showEditPhoto)}
+                                    >
+                                        <img
+                                            src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
+                                            alt='profile'
+                                            className='object-cover w-[5.5rem] h-[5.5rem]'
+                                        />
+                                        {/* <div className={showEditPhoto ? 'hidden' : 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer'}>
+                                            <p className='text-xs text-white text-center'>
+                                                Ganti Foto
+                                            </p>
+                                        </div> */}
+                                    </div>
+                                    {/* <form className={showEditPhoto ? 'flex flex-col justify-center' : 'hidden'}>
+                                        <input type="file" name="profileImage" onChange={onImageChange} />
+                                        <div className='grid grid-cols-2 gap-4 mt-6'>
+                                            <button
+                                                className='button-primary'
+                                                type='submit'
+                                                onClick={handleSubmit}
+                                            >
+                                                Simpan
+                                            </button>
+                                            <button
+                                                className='text-rose-500 text-center font-semibold w-full'
+                                                onClick={exitEdit}
+                                            >
+                                                Batal
+                                            </button>
+                                        </div>
+                                    </form> */}
+
+
+                                    <div className='flex flex-col gap-[5px]'>
+                                        <span className='text-sm font-medium mb-1'>Selamat datang,</span>
+                                        <span className='font-bold text-[1.5rem] break-words'>{user.username}</span>
+                                        <span className='text-gray-400 text-sm break-words'>{user.email}</span>
+                                    </div>
+                                </div>
+
+                                <ul className='flex flex-col mt-6 text-base'>
+                                    <li>
+                                        <a href={`/profile/${user._id}`}
+                                            className='hover:bg-gray-100 py-2 px-4 w-full flex'
+                                        >
+                                            Ganti Password
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        {
+                                            user.role.includes('admin') && (
+                                                <a href='/register' className='hover:bg-gray-100 py-2 px-4 w-full flex'>
+                                                    Add New User
+                                                </a>
+                                            )
+                                        }
+                                    </li>
+                                    <li>
+                                        <button onClick={() => setLogOut(true)} className='flex w-full text-rose-500 text-base hover:bg-rose-500 hover:text-white duration-200 py-2 px-4'>
+                                            Log Out
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </nav>
