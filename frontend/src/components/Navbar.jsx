@@ -104,7 +104,7 @@ const Navbar = () => {
 
 
                 {/* ================= Desktop ====================== */}
-                <div className='hidden xl:flex items-center gap-8 text-sm'>
+                <div className='hidden md:flex items-center gap-8 text-sm'>
 
                     <div className={
                         user.role.includes('admin')
@@ -314,7 +314,7 @@ const Navbar = () => {
 
 
                 {/* === Burger button === */}
-                <div className='block xl:hidden'>
+                <div className='block md:hidden'>
                     <FiMenu
                         className='text-2xl'
                         onClick={() => setOpenSidebar}
