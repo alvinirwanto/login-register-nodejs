@@ -104,7 +104,7 @@ const Navbar = () => {
                 <div className='block md:hidden'>
                     <FiMenu className='text-2xl' />
                 </div>
-                <div className='flex items-center gap-[3rem] text-sm'>
+                <div className='flex items-center gap-8 text-sm'>
 
                     <div className={
                         user.role.includes('admin')
@@ -112,7 +112,7 @@ const Navbar = () => {
                             ? 'hidden md:block relative group'
                             : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-2 justify-center items-center text-sm'>
+                            <div className='flex gap-1 justify-center items-center text-sm'>
                                 <span>Keuangan</span>
                                 <MdKeyboardArrowDown />
                             </div>
@@ -134,7 +134,7 @@ const Navbar = () => {
                             ? 'hidden md:block relative group'
                             : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-2 justify-center items-center text-sm'>
+                            <div className='flex gap-1 justify-center items-center text-sm'>
                                 <span>Mahasiswa</span>
                                 <MdKeyboardArrowDown />
                             </div>
@@ -158,7 +158,7 @@ const Navbar = () => {
                             ? 'hidden md:block relative group'
                             : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-2 justify-center items-center text-sm'>
+                            <div className='flex gap-1 justify-center items-center text-sm'>
                                 <span>Marketing</span>
                                 <MdKeyboardArrowDown />
                             </div>
@@ -180,7 +180,7 @@ const Navbar = () => {
                             ? 'hidden md:block relative group'
                             : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-2 justify-center items-center text-sm'>
+                            <div className='flex gap-1 justify-center items-center text-sm'>
                                 <span>Pegawai</span>
                                 <MdKeyboardArrowDown />
                             </div>
@@ -211,7 +211,7 @@ const Navbar = () => {
                             ? 'hidden md:block relative group'
                             : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-2 justify-center items-center text-sm'>
+                            <div className='flex gap-1 justify-center items-center text-sm'>
                                 <span>Projects</span>
                                 <MdKeyboardArrowDown />
                             </div>
