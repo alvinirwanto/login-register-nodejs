@@ -44,8 +44,8 @@ const Navbar = () => {
     // Pop up log out
     const [logOut, setLogOut] = useState(false)
 
-    //Sidebar
-    const [showSidebar, setShowSidebar] = useState(false)
+    //Edit Photo
+    const [changeProfilePict, setChangeProfilePict] = useState(false)
 
 
     const param = useParams()
@@ -87,7 +87,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`${shadowNav ? 'shadow-md' : 'shadow-none'} bg-white fixed top-0 duration-300 z-[100] w-full px-4 md:px-8 xl:px-[5rem] py-2 flex justify-between items-center`}>
+            <nav className={`${shadowNav ? 'shadow-md' : 'shadow-none'} bg-white fixed top-0 duration-300 z-[100] w-full px-4 md:px-8 xl:px-[4rem] py-2 flex justify-between items-center`}>
                 <div className='flex gap-2 md:gap-4 items-center'>
                     <a href='/'>
                         <img
@@ -101,10 +101,10 @@ const Navbar = () => {
                         <p className='text-sm md:text-lg xl:text-md font-semibold text-primary-blue'>Universitas Mercu Buana</p>
                     </div>
                 </div>
-                <div className='block md:hidden'>
-                    <FiMenu className='text-2xl' />
-                </div>
-                <div className='flex items-center gap-8 text-sm'>
+
+
+                {/* ================= Desktop ====================== */}
+                <div className='hidden xl:flex items-center gap-8 text-sm'>
 
                     <div className={
                         user.role.includes('admin')
@@ -239,20 +239,24 @@ const Navbar = () => {
                             <div className="bg-white shadow-lg w-[390px] p-4">
                                 <div className='flex items-center gap-4'>
                                     <div
-                                    // onClick={() => setShowEditPhoto(!showEditPhoto)}
-                                    >
+                                        // onMouseOver={() => setShowEditPhoto(true)}
+                                        // onMouseLeave={() => setShowEditPhoto(false)}
+                                        // onClick={() => setChangeProfilePict(true)}
+                                        className="w-[5rem] h-[5rem] rounded-full relative overflow-clip group">
                                         <img
                                             src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
                                             alt='profile'
-                                            className='object-cover w-[5.5rem] h-[5.5rem]'
+                                            className='object-cover w-full h-full'
                                         />
-                                        {/* <div className={showEditPhoto ? 'hidden' : 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer'}>
+
+                                        {/* <div className={showEditPhoto ? 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer' : 'hidden'}>
                                             <p className='text-xs text-white text-center'>
                                                 Ganti Foto
                                             </p>
                                         </div> */}
                                     </div>
-                                    {/* <form className={showEditPhoto ? 'flex flex-col justify-center' : 'hidden'}>
+
+                                    <form className={changeProfilePict ? 'flex flex-col justify-center' : 'hidden'}>
                                         <input type="file" name="profileImage" onChange={onImageChange} />
                                         <div className='grid grid-cols-2 gap-4 mt-6'>
                                             <button
@@ -269,7 +273,7 @@ const Navbar = () => {
                                                 Batal
                                             </button>
                                         </div>
-                                    </form> */}
+                                    </form>
 
 
                                     <div className='flex flex-col gap-[5px]'>
@@ -307,6 +311,19 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
+
+
+                {/* === Burger button === */}
+                <div className='block xl:hidden'>
+                    <FiMenu
+                        className='text-2xl'
+                        onClick={() => setOpenSidebar}
+                    />
+                </div>
+
+                {/* ================= Tablet ====================== */}
+
+
             </nav>
 
 
@@ -320,74 +337,6 @@ const Navbar = () => {
                         <button className='text-white bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 w-[16rem] py-2 text-center' onClick={() => setLogOut(false)}>Tidak, kembali ke halaman</button>
                     </div>
                 </div>
-            </div>
-
-
-            {/* SideBar */}
-            <div className={showSidebar ? 'fixed top-0 w-screen h-screen bg-shadow-modal z-[100] shadow-xl' : 'hidden'}>
-
-
-                <div className='bg-white h-full w-[30rem] absolute right-0 flex flex-col justify-between p-[3rem]'>
-                    <div className='flex flex-col gap-[5rem]'>
-                        <div className='flex justify-end'>
-                            <BiX className='text-semibold text-4xl cursor-pointer' onClick={() => setShowSidebar(false)} />
-                        </div>
-                        <div className='flex flex-col gap-8 justify-center items-center'>
-                            <div
-                                // onClick={() => setShowEditPhoto(!showEditPhoto)}
-                                className="w-[5rem] h-[5rem] bg-black rounded-full relative overflow-clip group">
-                                <img
-                                    src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
-                                    alt='profile'
-                                    className='object-cover w-full h-full'
-                                />
-                                {/* <div className={showEditPhoto ? 'hidden' : 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer'}>
-                                    <p className='text-xs text-white text-center'>
-                                        Ganti Foto
-                                    </p>
-                                </div> */}
-                            </div>
-
-                            <form className={showEditPhoto ? 'flex flex-col justify-center' : 'hidden'}>
-                                <input type="file" name="profileImage" onChange={onImageChange} />
-                                <div className='grid grid-cols-2 gap-4 mt-6'>
-                                    <button
-                                        className='button-primary'
-                                        type='submit'
-                                        onClick={handleSubmit}
-                                    >
-                                        Simpan
-                                    </button>
-                                    <button
-                                        className='text-rose-500 text-center font-semibold w-full'
-                                        onClick={exitEdit}
-                                    >
-                                        Batal
-                                    </button>
-                                </div>
-                            </form>
-
-                            <div className={showEditPhoto ? 'hidden' : 'text-center'}>
-                                <p className='font-semibold text-xl capitalize'>{user.username}</p>
-                                <p>{user.email}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col gap-1 text-start'>
-                        <a href={`/profile/${user._id}`}
-                            className='p-4 hover:bg-gray-100 text-center cursor-pointer'
-                        >
-                            Ganti Password
-                        </a>
-                        {
-                            user.role.includes('admin') && (
-                                <a href='/register' className='p-4 hover:bg-gray-100 text-center'>Add New User</a>
-                            )
-                        }
-                        <button onClick={() => setLogOut(true)} className='p-3 bg-rose-500 border-2 border-rose-500 hover:bg-transparent hover:text-rose-500 duration-300 text-white rounded-sm'>Log Out</button>
-                    </div>
-                </div>
-
             </div>
 
         </>
