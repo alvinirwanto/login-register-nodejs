@@ -197,7 +197,7 @@ const Navbar = () => {
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
                                     <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Data Closing</a>
-                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
+                                    <a href='/marketing/cost-per-student' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
                                 </div>
                             </div>
                         </div>
@@ -234,7 +234,7 @@ const Navbar = () => {
                     </div>
 
 
-                    <div className={
+                    {/* <div className={
                         user.role.includes('admin')
                             || user.role.includes('projects')
                             ? 'hidden md:block relative group'
@@ -253,7 +253,7 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className='hidden md:block relative group'>
                         <button className="w-[2.2rem] h-[2.2rem] rounded-full overflow-clip">
@@ -390,68 +390,6 @@ const Navbar = () => {
                     </div>
 
                     <div className='py-4'>
-                        {/* <ul>
-                            <li
-                                onClick={() => setOpenSubMenu('keuangan')}
-                                className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-base'>Keuangan</span>
-                                <MdKeyboardArrowDown className={openSubMenu === 'keuangan' ? `text-xl rotate-180` : 'text-xl'} />
-                            </li>
-                            <div className={openSubMenu === 'keuangan' ? 'flex flex-col text-sm' : 'hidden'}>
-                                <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Pengajuan PP dan PUM</a>
-                                <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
-                            </div>
-
-                            <li
-                                onClick={() => setOpenSubMenu('mahasiswa')}
-                                className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-base'>Mahasiswa</span>
-                                <MdKeyboardArrowDown className={openSubMenu === 'mahasiswa' ? `text-xl rotate-180` : 'text-xl'} />
-
-                            </li>
-                            <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col text-sm' : 'hidden'}>
-                                <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
-                                <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
-                            </div>
-
-                            <li
-                                onClick={() => setOpenSubMenu('marketing')}
-                                className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-base'>Marketing</span>
-                                <MdKeyboardArrowDown className={openSubMenu === 'marketing' ? `text-xl rotate-180` : 'text-xl'} />
-
-                            </li>
-                            <div className={openSubMenu === 'marketing' ? "flex flex-col text-sm" : 'hidden'}>
-                                <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Data Closing</a>
-                                <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
-                            </div>
-
-                            <li
-                                onClick={() => setOpenSubMenu('pegawai')}
-                                className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-base'>Pegawai</span>
-                                <MdKeyboardArrowDown className={openSubMenu === 'pegawai' ? `text-xl rotate-180` : 'text-xl'} />
-                            </li>
-                            <div className={openSubMenu === 'pegawai' ? "flex flex-col text-sm" : 'hidden'}>
-                                <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 py-3 px-4'>Rasio Dosen</a>
-                                <a href='/pegawai/presensi' className='hover:bg-gray-100 py-3 px-4'>Presensi</a>
-                            </div>
-
-                            <li className='flex gap-2 justify-between items-center py-2'>
-                                <a href='/akreditasi' className='text-base'>Akreditasi</a>
-                            </li>
-
-                            <li
-                                onClick={() => setOpenSubMenu('projects')}
-                                className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-base'>Projects</span>
-                                <MdKeyboardArrowDown className={openSubMenu === 'projects' ? `text-xl rotate-180` : 'text-xl'} />
-                            </li>
-                            <div className={openSubMenu === 'projects' ? "flex flex-col text-sm" : 'hidden'}>
-                                <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 py-3 px-4'>Hambalang Farm</a>
-                            </div>
-                        </ul> */}
-
                         <Accordion>
                             <AccordionItem header="Keuangan">
                                 <div className="flex flex-col text-base">
@@ -470,7 +408,7 @@ const Navbar = () => {
                             <AccordionItem header="Marketing">
                                 <div className="flex flex-col text-base">
                                     <a href='/marketing/data-closing' className='hover:bg-gray-100 p-2'>Data Closing</a>
-                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 p-2'>Cost per Student</a>
+                                    <a href='/marketing/cost-per-student' className='hover:bg-gray-100 p-2'>Cost per Student</a>
                                 </div>
                             </AccordionItem>
 
@@ -485,12 +423,12 @@ const Navbar = () => {
                                 <a href='/akreditasi' className='text-base w-full py-2'>Akreditasi</a>
                             </div>
 
-                            <AccordionItem header="Projects">
+                            {/* <AccordionItem header="Projects">
                                 <div className="flex flex-col text-base">
                                     <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 p-2'>Hambalang Farm</a>
 
                                 </div>
-                            </AccordionItem>
+                            </AccordionItem> */}
 
                         </Accordion>
                     </div>
