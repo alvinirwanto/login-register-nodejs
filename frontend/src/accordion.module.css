@@ -4,16 +4,11 @@
   align-items: center;
   width: 100%;
   margin: 0;
-  padding: 1rem;
-  font-size: 1rem;
+  padding: 0.5rem 0;
   text-align: left;
-  color: #007bff;
+  color: #000;
   background-color: transparent;
   border: none;
-}
-
-.itemBtn:hover {
-  background-color: #f3f3f3;
 }
 
 .itemBtnExpanded {
@@ -22,10 +17,6 @@
 
 .itemContent {
   transition: height 0.2s ease-in-out;
-}
-
-.itemPanel {
-  padding: 1rem;
 }
 
 .chevron {

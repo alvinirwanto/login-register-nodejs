@@ -103,7 +103,7 @@
 import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
-import styles from '../styles.module.css'
+import styles from '../accordion.module.css'
 
 // const AccordionItem = ({ header, ...rest }) => (
 //     <Item

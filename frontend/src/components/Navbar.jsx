@@ -10,6 +10,9 @@ import { uploadImage } from '../action/UploadAction'
 import { updateUser } from '../action/UserAction'
 import { useParams } from "react-router-dom"
 
+import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
+import styles from '../accordion.module.css'
+
 const Navbar = () => {
 
     // Add shadow to the navbar when scroll
@@ -89,6 +92,27 @@ const Navbar = () => {
         e.preventDefault()
         setShowEditPhoto(false)
     }
+
+
+    const AccordionItem = ({ header, ...rest }) => (
+        <Item
+            {...rest}
+            header={
+                <>
+                    {header}
+                    <MdKeyboardArrowDown className={styles.chevron} />
+                </>
+            }
+            className={styles.item}
+            buttonProps={{
+                className: ({ isEnter }) =>
+                    `${styles.itemBtn} ${isEnter && styles.itemBtnExpanded}`
+            }}
+            contentProps={{ className: styles.itemContent }}
+            panelProps={{ className: styles.itemPanel }}
+        />
+    );
+
 
     return (
         <>
@@ -366,7 +390,7 @@ const Navbar = () => {
                     </div>
 
                     <div className='py-4'>
-                        <ul>
+                        {/* <ul>
                             <li
                                 onClick={() => setOpenSubMenu('keuangan')}
                                 className='flex gap-2 justify-between items-center py-2'>
@@ -426,7 +450,49 @@ const Navbar = () => {
                             <div className={openSubMenu === 'projects' ? "flex flex-col text-sm" : 'hidden'}>
                                 <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 py-3 px-4'>Hambalang Farm</a>
                             </div>
-                        </ul>
+                        </ul> */}
+
+                        <Accordion>
+                            <AccordionItem header="Keuangan">
+                                <div className="flex flex-col text-base">
+                                    <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 p-2'>Pengajuan PP dan PUM</a>
+                                    <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 p-2'>Laporan Keuangan</a>
+                                </div>
+                            </AccordionItem>
+
+                            <AccordionItem header="Mahasiswa">
+                                <div className="flex flex-col text-base">
+                                    <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 p-2'>Data Mahasiswa</a>
+                                    <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 p-2'>Uang Kuliah</a>
+                                </div>
+                            </AccordionItem>
+
+                            <AccordionItem header="Marketing">
+                                <div className="flex flex-col text-base">
+                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 p-2'>Data Closing</a>
+                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 p-2'>Cost per Student</a>
+                                </div>
+                            </AccordionItem>
+
+                            <AccordionItem header="Pegawai">
+                                <div className="flex flex-col text-base">
+                                    <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 p-2'>Rasio Dosen</a>
+                                    <a href='/pegawai/presensi' className='hover:bg-gray-100 p-2'>Presensi</a>
+                                </div>
+                            </AccordionItem>
+
+                            <div className='flex gap-2 justify-between items-center w-full'>
+                                <a href='/akreditasi' className='text-base w-full py-2'>Akreditasi</a>
+                            </div>
+
+                            <AccordionItem header="Projects">
+                                <div className="flex flex-col text-base">
+                                    <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 p-2'>Hambalang Farm</a>
+
+                                </div>
+                            </AccordionItem>
+
+                        </Accordion>
                     </div>
 
                     <ul className='flex flex-col mt-6 text-[15px] text-base'>
