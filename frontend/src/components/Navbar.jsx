@@ -340,7 +340,7 @@ const Navbar = () => {
             </nav>
 
             {/* SideBar Mobile */}
-            <div className={openSidebar ? 'fixed top-0 z-[100] h-full w-full bg-[#0000004a] flex justify-center items-center' : 'hidden'}>
+            <div className={openSidebar ? 'fixed top-0 z-[100] h-screen w-screen bg-[#0000004a] flex justify-center items-center' : 'hidden'}>
                 <div className="bg-white rounded-sm w-[90%] p-6">
 
                     <div className='flex justify-end'>
@@ -370,10 +370,10 @@ const Navbar = () => {
                             <li
                                 onClick={() => setOpenSubMenu('keuangan')}
                                 className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-lg'>Keuangan</span>
+                                <span className='text-base'>Keuangan</span>
                                 <MdKeyboardArrowDown className={openSubMenu === 'keuangan' ? `text-xl rotate-180` : 'text-xl'} />
                             </li>
-                            <div className={openSubMenu === 'keuangan' ? 'flex flex-col' : 'hidden'}>
+                            <div className={openSubMenu === 'keuangan' ? 'flex flex-col text-sm' : 'hidden'}>
                                 <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Pengajuan PP dan PUM</a>
                                 <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
                             </div>
@@ -381,11 +381,11 @@ const Navbar = () => {
                             <li
                                 onClick={() => setOpenSubMenu('mahasiswa')}
                                 className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-lg'>Mahasiswa</span>
+                                <span className='text-base'>Mahasiswa</span>
                                 <MdKeyboardArrowDown className={openSubMenu === 'mahasiswa' ? `text-xl rotate-180` : 'text-xl'} />
 
                             </li>
-                            <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col' : 'hidden'}>
+                            <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col text-sm' : 'hidden'}>
                                 <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
                                 <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
                             </div>
@@ -393,11 +393,11 @@ const Navbar = () => {
                             <li
                                 onClick={() => setOpenSubMenu('marketing')}
                                 className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-lg'>Marketing</span>
+                                <span className='text-base'>Marketing</span>
                                 <MdKeyboardArrowDown className={openSubMenu === 'marketing' ? `text-xl rotate-180` : 'text-xl'} />
 
                             </li>
-                            <div className={openSubMenu === 'marketing' ? "flex flex-col" : 'hidden'}>
+                            <div className={openSubMenu === 'marketing' ? "flex flex-col text-sm" : 'hidden'}>
                                 <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Data Closing</a>
                                 <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
                             </div>
@@ -405,31 +405,31 @@ const Navbar = () => {
                             <li
                                 onClick={() => setOpenSubMenu('pegawai')}
                                 className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-lg'>Pegawai</span>
+                                <span className='text-base'>Pegawai</span>
                                 <MdKeyboardArrowDown className={openSubMenu === 'pegawai' ? `text-xl rotate-180` : 'text-xl'} />
                             </li>
-                            <div className={openSubMenu === 'pegawai' ? "flex flex-col" : 'hidden'}>
+                            <div className={openSubMenu === 'pegawai' ? "flex flex-col text-sm" : 'hidden'}>
                                 <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 py-3 px-4'>Rasio Dosen</a>
                                 <a href='/pegawai/presensi' className='hover:bg-gray-100 py-3 px-4'>Presensi</a>
                             </div>
 
                             <li className='flex gap-2 justify-between items-center py-2'>
-                                <a href='/akreditasi' className='text-lg'>Akreditasi</a>
+                                <a href='/akreditasi' className='text-base'>Akreditasi</a>
                             </li>
 
                             <li
                                 onClick={() => setOpenSubMenu('projects')}
                                 className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-lg'>Projects</span>
+                                <span className='text-base'>Projects</span>
                                 <MdKeyboardArrowDown className={openSubMenu === 'projects' ? `text-xl rotate-180` : 'text-xl'} />
                             </li>
-                            <div className={openSubMenu === 'projects' ? "flex flex-col" : 'hidden'}>
+                            <div className={openSubMenu === 'projects' ? "flex flex-col text-sm" : 'hidden'}>
                                 <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 py-3 px-4'>Hambalang Farm</a>
                             </div>
                         </ul>
                     </div>
 
-                    <ul className='flex flex-col mt-6 text-[15px] text-lg'>
+                    <ul className='flex flex-col mt-6 text-[15px] text-base'>
                         <li>
                             <a href={`/profile/${user._id}`}
                                 className='py-2 w-full flex'
