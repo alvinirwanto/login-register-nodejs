@@ -2,9 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import { FiMenu } from 'react-icons/fi'
+import { FiMenu, FiX } from 'react-icons/fi'
 import { MdKeyboardArrowDown } from 'react-icons/md'
-import { BiX } from 'react-icons/bi'
 
 import { logout } from '../action/AuthAction'
 import { uploadImage } from '../action/UploadAction'
@@ -44,8 +43,14 @@ const Navbar = () => {
     // Pop up log out
     const [logOut, setLogOut] = useState(false)
 
-    //Sidebar
-    const [showSidebar, setShowSidebar] = useState(false)
+    //Edit Photo
+    const [changeProfilePict, setChangeProfilePict] = useState(false)
+
+    // SideBar mobile 
+    const [openSidebar, setOpenSidebar] = useState(false)
+
+    // Sub Menu
+    const [openSubMenu, setOpenSubMenu] = useState(false)
 
 
     const param = useParams()
@@ -87,7 +92,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`${shadowNav ? 'shadow-md' : 'shadow-none'} bg-white fixed top-0 duration-300 z-[100] w-full px-4 md:px-8 xl:px-[5rem] py-2 flex justify-between items-center`}>
+            <nav className={`${shadowNav ? 'shadow-md' : 'shadow-none'} bg-white fixed top-0 duration-300 z-[100] w-full px-4 md:px-8 xl:px-[4rem] py-2 flex justify-between items-center`}>
                 <div className='flex gap-2 md:gap-4 items-center'>
                     <a href='/'>
                         <img
@@ -101,10 +106,10 @@ const Navbar = () => {
                         <p className='text-sm md:text-lg xl:text-md font-semibold text-primary-blue'>Universitas Mercu Buana</p>
                     </div>
                 </div>
-                <div className='block md:hidden'>
-                    <FiMenu className='text-2xl' />
-                </div>
-                <div className='flex items-center gap-8 text-sm'>
+
+
+                {/* ================= Desktop ====================== */}
+                <div className='hidden md:flex items-center gap-8 text-sm'>
 
                     <div className={
                         user.role.includes('admin')
@@ -228,31 +233,41 @@ const Navbar = () => {
 
                     <div className='hidden md:block relative group'>
                         <button className="w-[2.2rem] h-[2.2rem] rounded-full overflow-clip">
-                            <img
+                            <div className='bg-primary-blue h-full w-full text-white flex justify-center items-center'>
+                                <span className='text-xl'>{user.username.charAt(0)}</span>
+                            </div>
+                            {/* <img
                                 src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
                                 alt='profile'
                                 className='object-cover w-full h-full'
-                            />
+                            /> */}
                         </button>
 
                         <div className="absolute -right-10 z-10 hidden bg-grey-200 group-hover:block">
                             <div className="bg-white shadow-lg w-[390px] p-4">
                                 <div className='flex items-center gap-4'>
                                     <div
-                                    // onClick={() => setShowEditPhoto(!showEditPhoto)}
-                                    >
-                                        <img
+                                        // onMouseOver={() => setShowEditPhoto(true)}
+                                        // onMouseLeave={() => setShowEditPhoto(false)}
+                                        // onClick={() => setChangeProfilePict(true)}
+                                        className="w-[5rem] h-[5rem] rounded-full relative overflow-clip group">
+                                        {/* <img
                                             src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
                                             alt='profile'
-                                            className='object-cover w-[5.5rem] h-[5.5rem]'
-                                        />
-                                        {/* <div className={showEditPhoto ? 'hidden' : 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer'}>
+                                            className='object-cover w-full h-full'
+                                        /> */}
+
+                                        <div className='bg-primary-blue h-full w-full text-white flex justify-center items-center'>
+                                            <span className='text-4xl'>{user.username.charAt(0)}</span>
+                                        </div>
+                                        {/* <div className={showEditPhoto ? 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer' : 'hidden'}>
                                             <p className='text-xs text-white text-center'>
                                                 Ganti Foto
                                             </p>
                                         </div> */}
                                     </div>
-                                    {/* <form className={showEditPhoto ? 'flex flex-col justify-center' : 'hidden'}>
+
+                                    {/* <form className={changeProfilePict ? 'flex flex-col justify-center' : 'hidden'}>
                                         <input type="file" name="profileImage" onChange={onImageChange} />
                                         <div className='grid grid-cols-2 gap-4 mt-6'>
                                             <button
@@ -307,87 +322,151 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
+
+
+                {/* === Burger button === */}
+                <div className='block md:hidden z-[500]'>
+                    <FiMenu
+                        className='text-2xl'
+                        onClick={() => setOpenSidebar(true)}
+                    />
+                </div>
+
+                {/* ================= Tablet ====================== */}
+
+                {/* ================= Mobile ====================== */}
+
+
             </nav>
+
+            {/* SideBar Mobile */}
+            <div className={openSidebar ? 'fixed top-0 z-[100] h-screen w-screen bg-[#0000004a] flex justify-center items-center' : 'hidden'}>
+                <div className="bg-white rounded-sm w-[90%] p-6">
+
+                    <div className='flex justify-end'>
+                        <FiX
+                            className='text-2xl'
+                            onClick={() => setOpenSidebar(false)}
+                        />
+                    </div>
+
+                    <div className='flex items-center gap-4 border-b-[1px] border-gray-300 pb-4'>
+                        <div className="w-[4rem] h-[4rem] rounded-full relative overflow-clip group">
+                            <div className='bg-primary-blue h-full w-full text-white flex justify-center items-center'>
+                                <span className='text-4xl'>{user.username.charAt(0)}</span>
+                            </div>
+                        </div>
+
+
+                        <div className='flex flex-col'>
+                            <span className='text-sm font-medium'>Selamat datang,</span>
+                            <span className='font-bold text-[1.3rem] break-words'>{user.username}</span>
+                            <span className='text-gray-400 text-sm break-words'>{user.email}</span>
+                        </div>
+                    </div>
+
+                    <div className='py-4'>
+                        <ul>
+                            <li
+                                onClick={() => setOpenSubMenu('keuangan')}
+                                className='flex gap-2 justify-between items-center py-2'>
+                                <span className='text-base'>Keuangan</span>
+                                <MdKeyboardArrowDown className={openSubMenu === 'keuangan' ? `text-xl rotate-180` : 'text-xl'} />
+                            </li>
+                            <div className={openSubMenu === 'keuangan' ? 'flex flex-col text-sm' : 'hidden'}>
+                                <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Pengajuan PP dan PUM</a>
+                                <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
+                            </div>
+
+                            <li
+                                onClick={() => setOpenSubMenu('mahasiswa')}
+                                className='flex gap-2 justify-between items-center py-2'>
+                                <span className='text-base'>Mahasiswa</span>
+                                <MdKeyboardArrowDown className={openSubMenu === 'mahasiswa' ? `text-xl rotate-180` : 'text-xl'} />
+
+                            </li>
+                            <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col text-sm' : 'hidden'}>
+                                <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
+                                <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
+                            </div>
+
+                            <li
+                                onClick={() => setOpenSubMenu('marketing')}
+                                className='flex gap-2 justify-between items-center py-2'>
+                                <span className='text-base'>Marketing</span>
+                                <MdKeyboardArrowDown className={openSubMenu === 'marketing' ? `text-xl rotate-180` : 'text-xl'} />
+
+                            </li>
+                            <div className={openSubMenu === 'marketing' ? "flex flex-col text-sm" : 'hidden'}>
+                                <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Data Closing</a>
+                                <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
+                            </div>
+
+                            <li
+                                onClick={() => setOpenSubMenu('pegawai')}
+                                className='flex gap-2 justify-between items-center py-2'>
+                                <span className='text-base'>Pegawai</span>
+                                <MdKeyboardArrowDown className={openSubMenu === 'pegawai' ? `text-xl rotate-180` : 'text-xl'} />
+                            </li>
+                            <div className={openSubMenu === 'pegawai' ? "flex flex-col text-sm" : 'hidden'}>
+                                <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 py-3 px-4'>Rasio Dosen</a>
+                                <a href='/pegawai/presensi' className='hover:bg-gray-100 py-3 px-4'>Presensi</a>
+                            </div>
+
+                            <li className='flex gap-2 justify-between items-center py-2'>
+                                <a href='/akreditasi' className='text-base'>Akreditasi</a>
+                            </li>
+
+                            <li
+                                onClick={() => setOpenSubMenu('projects')}
+                                className='flex gap-2 justify-between items-center py-2'>
+                                <span className='text-base'>Projects</span>
+                                <MdKeyboardArrowDown className={openSubMenu === 'projects' ? `text-xl rotate-180` : 'text-xl'} />
+                            </li>
+                            <div className={openSubMenu === 'projects' ? "flex flex-col text-sm" : 'hidden'}>
+                                <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 py-3 px-4'>Hambalang Farm</a>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <ul className='flex flex-col mt-6 text-[15px] text-base'>
+                        <li>
+                            <a href={`/profile/${user._id}`}
+                                className='py-2 w-full flex'
+                            >
+                                Ganti Password
+                            </a>
+                        </li>
+
+                        <li>
+                            {
+                                user.role.includes('admin') && (
+                                    <a href='/register' className='py-2 w-full flex'>
+                                        Add New User
+                                    </a>
+                                )
+                            }
+                        </li>
+                        <li>
+                            <button onClick={() => setLogOut(true)} className='flex w-full text-rose-500 hover:bg-rose-500duration-200 py-2'>
+                                Log Out
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
 
 
             {/* Modal Log Out */}
             <div className={logOut ? 'fixed top-0 bg-shadow-modal w-screen h-screen z-[300] flex justify-center items-center' : 'hidden'}>
-                <div className='bg-white px-9 py-[3rem] rounded-md flex flex-col gap-9 items-center'>
+                <div className='bg-white w-[95%] px-9 py-[3rem] rounded-md flex flex-col gap-9 items-center'>
                     <p className='text-xl font-semibold'>Apakah kamu yakin untuk keluar?</p>
                     <div className='flex items-center gap-8 font-semibold'>
-                        <button className='hover:text-rose-500 text-primary-blue w-[16rem] py-2 text-center' onClick={handleLogOut}>Ya, saya yakin</button>
-                        <button className='text-white bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 w-[16rem] py-2 text-center' onClick={() => setLogOut(false)}>Tidak, kembali ke halaman</button>
+                        <button className='hover:text-rose-500 text-primary-blue w-[10rem] py-2 text-center' onClick={handleLogOut}>Ya, saya yakin</button>
+                        <button className='text-white bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 w-[10rem] py-2 text-center' onClick={() => setLogOut(false)}>Tidak, kembali ke halaman</button>
                     </div>
                 </div>
-            </div>
-
-
-            {/* SideBar */}
-            <div className={showSidebar ? 'fixed top-0 w-screen h-screen bg-shadow-modal z-[100] shadow-xl' : 'hidden'}>
-
-
-                <div className='bg-white h-full w-[30rem] absolute right-0 flex flex-col justify-between p-[3rem]'>
-                    <div className='flex flex-col gap-[5rem]'>
-                        <div className='flex justify-end'>
-                            <BiX className='text-semibold text-4xl cursor-pointer' onClick={() => setShowSidebar(false)} />
-                        </div>
-                        <div className='flex flex-col gap-8 justify-center items-center'>
-                            <div
-                                // onClick={() => setShowEditPhoto(!showEditPhoto)}
-                                className="w-[5rem] h-[5rem] bg-black rounded-full relative overflow-clip group">
-                                <img
-                                    src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
-                                    alt='profile'
-                                    className='object-cover w-full h-full'
-                                />
-                                {/* <div className={showEditPhoto ? 'hidden' : 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer'}>
-                                    <p className='text-xs text-white text-center'>
-                                        Ganti Foto
-                                    </p>
-                                </div> */}
-                            </div>
-
-                            <form className={showEditPhoto ? 'flex flex-col justify-center' : 'hidden'}>
-                                <input type="file" name="profileImage" onChange={onImageChange} />
-                                <div className='grid grid-cols-2 gap-4 mt-6'>
-                                    <button
-                                        className='button-primary'
-                                        type='submit'
-                                        onClick={handleSubmit}
-                                    >
-                                        Simpan
-                                    </button>
-                                    <button
-                                        className='text-rose-500 text-center font-semibold w-full'
-                                        onClick={exitEdit}
-                                    >
-                                        Batal
-                                    </button>
-                                </div>
-                            </form>
-
-                            <div className={showEditPhoto ? 'hidden' : 'text-center'}>
-                                <p className='font-semibold text-xl capitalize'>{user.username}</p>
-                                <p>{user.email}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col gap-1 text-start'>
-                        <a href={`/profile/${user._id}`}
-                            className='p-4 hover:bg-gray-100 text-center cursor-pointer'
-                        >
-                            Ganti Password
-                        </a>
-                        {
-                            user.role.includes('admin') && (
-                                <a href='/register' className='p-4 hover:bg-gray-100 text-center'>Add New User</a>
-                            )
-                        }
-                        <button onClick={() => setLogOut(true)} className='p-3 bg-rose-500 border-2 border-rose-500 hover:bg-transparent hover:text-rose-500 duration-300 text-white rounded-sm'>Log Out</button>
-                    </div>
-                </div>
-
             </div>
 
         </>
