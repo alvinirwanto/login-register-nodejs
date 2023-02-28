@@ -228,11 +228,14 @@ const Navbar = () => {
 
                     <div className='hidden md:block relative group'>
                         <button className="w-[2.2rem] h-[2.2rem] rounded-full overflow-clip">
-                            <img
+                            <div className='bg-primary-blue h-full w-full text-white flex justify-center items-center'>
+                                <span className='text-xl'>{user.username.charAt(0)}</span>
+                            </div>
+                            {/* <img
                                 src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
                                 alt='profile'
                                 className='object-cover w-full h-full'
-                            />
+                            /> */}
                         </button>
 
                         <div className="absolute -right-10 z-10 hidden bg-grey-200 group-hover:block">
@@ -243,12 +246,15 @@ const Navbar = () => {
                                         // onMouseLeave={() => setShowEditPhoto(false)}
                                         // onClick={() => setChangeProfilePict(true)}
                                         className="w-[5rem] h-[5rem] rounded-full relative overflow-clip group">
-                                        <img
+                                        {/* <img
                                             src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
                                             alt='profile'
                                             className='object-cover w-full h-full'
-                                        />
+                                        /> */}
 
+                                        <div className='bg-primary-blue h-full w-full text-white flex justify-center items-center'>
+                                            <span className='text-4xl'>{user.username.charAt(0)}</span>
+                                        </div>
                                         {/* <div className={showEditPhoto ? 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer' : 'hidden'}>
                                             <p className='text-xs text-white text-center'>
                                                 Ganti Foto
@@ -256,7 +262,7 @@ const Navbar = () => {
                                         </div> */}
                                     </div>
 
-                                    <form className={changeProfilePict ? 'flex flex-col justify-center' : 'hidden'}>
+                                    {/* <form className={changeProfilePict ? 'flex flex-col justify-center' : 'hidden'}>
                                         <input type="file" name="profileImage" onChange={onImageChange} />
                                         <div className='grid grid-cols-2 gap-4 mt-6'>
                                             <button
@@ -273,7 +279,7 @@ const Navbar = () => {
                                                 Batal
                                             </button>
                                         </div>
-                                    </form>
+                                    </form> */}
 
 
                                     <div className='flex flex-col gap-[5px]'>
