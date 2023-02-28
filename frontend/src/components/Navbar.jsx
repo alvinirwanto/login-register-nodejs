@@ -460,11 +460,11 @@ const Navbar = () => {
 
             {/* Modal Log Out */}
             <div className={logOut ? 'fixed top-0 bg-shadow-modal w-screen h-screen z-[300] flex justify-center items-center' : 'hidden'}>
-                <div className='bg-white w-[95%] px-9 py-[3rem] rounded-md flex flex-col gap-9 items-center'>
+                <div className='bg-white w-[95%] md:w-auto px-9 py-[3rem] rounded-md flex flex-col gap-9 items-center'>
                     <p className='text-xl font-semibold'>Apakah kamu yakin untuk keluar?</p>
                     <div className='flex items-center gap-8 font-semibold'>
-                        <button className='hover:text-rose-500 text-primary-blue w-[10rem] py-2 text-center' onClick={handleLogOut}>Ya, saya yakin</button>
-                        <button className='text-white bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 w-[10rem] py-2 text-center' onClick={() => setLogOut(false)}>Tidak, kembali ke halaman</button>
+                        <button className='text-rose-500 hover:text-primary-blue w-[10rem] md:w-[16rem] py-2 text-center' onClick={handleLogOut}>Ya, saya yakin</button>
+                        <button className='text-white bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 w-[10rem] md:w-[16rem] py-2 text-center' onClick={() => setLogOut(false)}>Tidak, kembali ke halaman</button>
                     </div>
                 </div>
             </div>

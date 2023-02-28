@@ -8,10 +8,10 @@ const Presensi = () => {
         >
             <div className='pt-[10rem]'>
                 <iframe
-                    title="UMB Presensi Dashboard 030223 - Page 1"
-                    // width="600" height="486" 
+                    title="Data Closing 230223"
                     className='w-full h-screen'
-                    src="https://app.powerbi.com/view?r=eyJrIjoiOWJkZmQ2ZmUtMWJhOC00Nzc1LTkwNTgtMjU0ZDk5MWRmMmFjIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D&pageName=ReportSection0ca669535a15e9d83ea2" frameborder="0" allowFullScreen="true"></iframe>
+                    // width="600" height="373.5" 
+                    src="https://app.powerbi.com/view?r=eyJrIjoiZWFjMmFjYTItY2MxOS00YmY2LWJjZDAtYjUzNWMxMmM0ZGVkIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D&pageName=ReportSection2b3fefe0ec91aa4553da" frameborder="0" allowFullScreen="true"></iframe>
             </div>
         </Layout>
     )
