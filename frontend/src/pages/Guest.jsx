@@ -42,10 +42,10 @@ const Guest = () => {
                         <p className='text-sm md:text-lg xl:text-md font-semibold text-primary-blue'>Universitas Mercu Buana</p>
                     </div>
                 </div>
-                <div className='block md:hidden'>
+                {/* <div className='block md:hidden'>
                     <FiMenu className='text-2xl' />
-                </div>
-                <a href='/login' className='bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 font-medium text-white px-8 py-2'>
+                </div> */}
+                <a href='/login' className='bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 font-medium text-white px-5 py-2'>
                     Login
                 </a>
             </nav>

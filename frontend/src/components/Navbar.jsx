@@ -2,9 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import { FiMenu } from 'react-icons/fi'
+import { FiMenu, FiX } from 'react-icons/fi'
 import { MdKeyboardArrowDown } from 'react-icons/md'
-import { BiX } from 'react-icons/bi'
 
 import { logout } from '../action/AuthAction'
 import { uploadImage } from '../action/UploadAction'
@@ -46,6 +45,12 @@ const Navbar = () => {
 
     //Edit Photo
     const [changeProfilePict, setChangeProfilePict] = useState(false)
+
+    // SideBar mobile 
+    const [openSidebar, setOpenSidebar] = useState(false)
+
+    // Sub Menu
+    const [openSubMenu, setOpenSubMenu] = useState(false)
 
 
     const param = useParams()
@@ -320,27 +325,146 @@ const Navbar = () => {
 
 
                 {/* === Burger button === */}
-                <div className='block md:hidden'>
+                <div className='block md:hidden z-[500]'>
                     <FiMenu
                         className='text-2xl'
-                        onClick={() => setOpenSidebar}
+                        onClick={() => setOpenSidebar(true)}
                     />
                 </div>
 
                 {/* ================= Tablet ====================== */}
 
+                {/* ================= Mobile ====================== */}
+
 
             </nav>
+
+            {/* SideBar Mobile */}
+            <div className={openSidebar ? 'fixed top-0 z-[100] h-full w-full bg-[#0000004a] flex justify-center items-center' : 'hidden'}>
+                <div className="bg-white rounded-sm w-[90%] p-6">
+
+                    <div className='flex justify-end'>
+                        <FiX
+                            className='text-2xl'
+                            onClick={() => setOpenSidebar(false)}
+                        />
+                    </div>
+
+                    <div className='flex items-center gap-4 border-b-[1px] border-gray-300 pb-4'>
+                        <div className="w-[4rem] h-[4rem] rounded-full relative overflow-clip group">
+                            <div className='bg-primary-blue h-full w-full text-white flex justify-center items-center'>
+                                <span className='text-4xl'>{user.username.charAt(0)}</span>
+                            </div>
+                        </div>
+
+
+                        <div className='flex flex-col'>
+                            <span className='text-sm font-medium'>Selamat datang,</span>
+                            <span className='font-bold text-[1.3rem] break-words'>{user.username}</span>
+                            <span className='text-gray-400 text-sm break-words'>{user.email}</span>
+                        </div>
+                    </div>
+
+                    <div className='py-4'>
+                        <ul>
+                            <li
+                                onClick={() => setOpenSubMenu('keuangan')}
+                                className='flex gap-2 justify-between items-center py-2'>
+                                <span className='text-lg'>Keuangan</span>
+                                <MdKeyboardArrowDown className={openSubMenu === 'keuangan' ? `text-xl rotate-180` : 'text-xl'} />
+                            </li>
+                            <div className={openSubMenu === 'keuangan' ? 'flex flex-col' : 'hidden'}>
+                                <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Pengajuan PP dan PUM</a>
+                                <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
+                            </div>
+
+                            <li
+                                onClick={() => setOpenSubMenu('mahasiswa')}
+                                className='flex gap-2 justify-between items-center py-2'>
+                                <span className='text-lg'>Mahasiswa</span>
+                                <MdKeyboardArrowDown className={openSubMenu === 'mahasiswa' ? `text-xl rotate-180` : 'text-xl'} />
+
+                            </li>
+                            <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col' : 'hidden'}>
+                                <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
+                                <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
+                            </div>
+
+                            <li
+                                onClick={() => setOpenSubMenu('marketing')}
+                                className='flex gap-2 justify-between items-center py-2'>
+                                <span className='text-lg'>Marketing</span>
+                                <MdKeyboardArrowDown className={openSubMenu === 'marketing' ? `text-xl rotate-180` : 'text-xl'} />
+
+                            </li>
+                            <div className={openSubMenu === 'marketing' ? "flex flex-col" : 'hidden'}>
+                                <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Data Closing</a>
+                                <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
+                            </div>
+
+                            <li
+                                onClick={() => setOpenSubMenu('pegawai')}
+                                className='flex gap-2 justify-between items-center py-2'>
+                                <span className='text-lg'>Pegawai</span>
+                                <MdKeyboardArrowDown className={openSubMenu === 'pegawai' ? `text-xl rotate-180` : 'text-xl'} />
+                            </li>
+                            <div className={openSubMenu === 'pegawai' ? "flex flex-col" : 'hidden'}>
+                                <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 py-3 px-4'>Rasio Dosen</a>
+                                <a href='/pegawai/presensi' className='hover:bg-gray-100 py-3 px-4'>Presensi</a>
+                            </div>
+
+                            <li className='flex gap-2 justify-between items-center py-2'>
+                                <a href='/akreditasi' className='text-lg'>Akreditasi</a>
+                            </li>
+
+                            <li
+                                onClick={() => setOpenSubMenu('projects')}
+                                className='flex gap-2 justify-between items-center py-2'>
+                                <span className='text-lg'>Projects</span>
+                                <MdKeyboardArrowDown className={openSubMenu === 'projects' ? `text-xl rotate-180` : 'text-xl'} />
+                            </li>
+                            <div className={openSubMenu === 'projects' ? "flex flex-col" : 'hidden'}>
+                                <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 py-3 px-4'>Hambalang Farm</a>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <ul className='flex flex-col mt-6 text-[15px] text-lg'>
+                        <li>
+                            <a href={`/profile/${user._id}`}
+                                className='py-2 w-full flex'
+                            >
+                                Ganti Password
+                            </a>
+                        </li>
+
+                        <li>
+                            {
+                                user.role.includes('admin') && (
+                                    <a href='/register' className='py-2 w-full flex'>
+                                        Add New User
+                                    </a>
+                                )
+                            }
+                        </li>
+                        <li>
+                            <button onClick={() => setLogOut(true)} className='flex w-full text-rose-500 hover:bg-rose-500duration-200 py-2'>
+                                Log Out
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
 
 
             {/* Modal Log Out */}
             <div className={logOut ? 'fixed top-0 bg-shadow-modal w-screen h-screen z-[300] flex justify-center items-center' : 'hidden'}>
-                <div className='bg-white px-9 py-[3rem] rounded-md flex flex-col gap-9 items-center'>
+                <div className='bg-white w-[95%] px-9 py-[3rem] rounded-md flex flex-col gap-9 items-center'>
                     <p className='text-xl font-semibold'>Apakah kamu yakin untuk keluar?</p>
                     <div className='flex items-center gap-8 font-semibold'>
-                        <button className='hover:text-rose-500 text-primary-blue w-[16rem] py-2 text-center' onClick={handleLogOut}>Ya, saya yakin</button>
-                        <button className='text-white bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 w-[16rem] py-2 text-center' onClick={() => setLogOut(false)}>Tidak, kembali ke halaman</button>
+                        <button className='hover:text-rose-500 text-primary-blue w-[10rem] py-2 text-center' onClick={handleLogOut}>Ya, saya yakin</button>
+                        <button className='text-white bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 w-[10rem] py-2 text-center' onClick={() => setLogOut(false)}>Tidak, kembali ke halaman</button>
                     </div>
                 </div>
             </div>
