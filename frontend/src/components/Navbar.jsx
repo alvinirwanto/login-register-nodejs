@@ -133,7 +133,7 @@ const Navbar = () => {
 
 
                 {/* ================= Desktop ====================== */}
-                <div className='hidden md:flex items-center gap-8 text-sm'>
+                <div className='hidden xl:flex items-center gap-8 text-sm'>
 
                     <div className={
                         user.role.includes('admin')
@@ -349,7 +349,7 @@ const Navbar = () => {
 
 
                 {/* === Burger button === */}
-                <div className='block md:hidden z-[500]'>
+                <div className='block xl:hidden z-[500]'>
                     <FiMenu
                         className='text-2xl'
                         onClick={() => setOpenSidebar(true)}
@@ -364,8 +364,8 @@ const Navbar = () => {
             </nav>
 
             {/* SideBar Mobile */}
-            <div className={openSidebar ? 'fixed top-0 z-[100] h-screen w-screen bg-[#0000004a] flex justify-center items-center' : 'hidden'}>
-                <div className="bg-white rounded-sm w-[90%] p-6">
+            <div className={openSidebar ? 'fixed top-0 z-[100] h-screen w-screen bg-[#0000004a] flex justify-center items-center md:justify-end md:items-start md:pt-[5rem] md:pr-[4rem]' : 'hidden'}>
+                <div className="bg-white rounded-sm w-[90%] md:w-[70%] p-6 md:px-8">
 
                     <div className='flex justify-end'>
                         <FiX
@@ -375,7 +375,7 @@ const Navbar = () => {
                     </div>
 
                     <div className='flex items-center gap-4 border-b-[1px] border-gray-300 pb-4'>
-                        <div className="w-[4rem] h-[4rem] rounded-full relative overflow-clip group">
+                        <div className="w-[4rem] h-[4rem] md:w-[5rem] md:h-[5rem] rounded-full relative overflow-clip group">
                             <div className='bg-primary-blue h-full w-full text-white flex justify-center items-center'>
                                 <span className='text-4xl'>{user.username.charAt(0)}</span>
                             </div>
@@ -383,48 +383,48 @@ const Navbar = () => {
 
 
                         <div className='flex flex-col'>
-                            <span className='text-sm font-medium'>Selamat datang,</span>
-                            <span className='font-bold text-[1.3rem] break-words'>{user.username}</span>
-                            <span className='text-gray-400 text-sm break-words'>{user.email}</span>
+                            <span className='text-sm md:text-base font-medium'>Selamat datang,</span>
+                            <span className='font-bold text-[1.3rem] md:text-3xl break-words'>{user.username}</span>
+                            <span className='text-gray-400 text-sm md:text-base break-words'>{user.email}</span>
                         </div>
                     </div>
 
-                    <div className='py-4'>
+                    <div className='py-4 text-base md:text-xl'>
                         <Accordion>
                             <AccordionItem header="Keuangan">
-                                <div className="flex flex-col text-base">
+                                <div className="flex flex-col">
                                     <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 p-2'>Pengajuan PP dan PUM</a>
                                     <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 p-2'>Laporan Keuangan</a>
                                 </div>
                             </AccordionItem>
 
                             <AccordionItem header="Mahasiswa">
-                                <div className="flex flex-col text-base">
+                                <div className="flex flex-col">
                                     <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 p-2'>Data Mahasiswa</a>
                                     <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 p-2'>Uang Kuliah</a>
                                 </div>
                             </AccordionItem>
 
                             <AccordionItem header="Marketing">
-                                <div className="flex flex-col text-base">
+                                <div className="flex flex-col">
                                     <a href='/marketing/data-closing' className='hover:bg-gray-100 p-2'>Data Closing</a>
                                     <a href='/marketing/cost-per-student' className='hover:bg-gray-100 p-2'>Cost per Student</a>
                                 </div>
                             </AccordionItem>
 
                             <AccordionItem header="Pegawai">
-                                <div className="flex flex-col text-base">
+                                <div className="flex flex-col">
                                     <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 p-2'>Rasio Dosen</a>
                                     <a href='/pegawai/presensi' className='hover:bg-gray-100 p-2'>Presensi</a>
                                 </div>
                             </AccordionItem>
 
                             <div className='flex gap-2 justify-between items-center w-full'>
-                                <a href='/akreditasi' className='text-base w-full py-2'>Akreditasi</a>
+                                <a href='/akreditasi' className='w-full py-2'>Akreditasi</a>
                             </div>
 
                             {/* <AccordionItem header="Projects">
-                                <div className="flex flex-col text-base">
+                                <div className="flex flex-col">
                                     <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 p-2'>Hambalang Farm</a>
 
                                 </div>
@@ -433,7 +433,7 @@ const Navbar = () => {
                         </Accordion>
                     </div>
 
-                    <ul className='flex flex-col mt-6 text-[15px] text-base'>
+                    <ul className='flex flex-col mt-6 text-[15px] text-base md:text-xl'>
                         <li>
                             <a href={`/profile/${user._id}`}
                                 className='py-2 w-full flex'
