@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../../components/Layout'
 
 
-const Profile = () => {
+const ProfileMahasiswa = () => {
     return (
         <Layout
             pageTitle='Profile'>
@@ -17,4 +17,4 @@ const Profile = () => {
     )
 }
 
-export default Profile
+export default ProfileMahasiswa

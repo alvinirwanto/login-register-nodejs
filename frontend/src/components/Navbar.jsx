@@ -10,6 +10,9 @@ import { uploadImage } from '../action/UploadAction'
 import { updateUser } from '../action/UserAction'
 import { useParams } from "react-router-dom"
 
+import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
+import styles from '../accordion.module.css'
+
 const Navbar = () => {
 
     // Add shadow to the navbar when scroll
@@ -90,6 +93,27 @@ const Navbar = () => {
         setShowEditPhoto(false)
     }
 
+
+    const AccordionItem = ({ header, ...rest }) => (
+        <Item
+            {...rest}
+            header={
+                <>
+                    {header}
+                    <MdKeyboardArrowDown className={styles.chevron} />
+                </>
+            }
+            className={styles.item}
+            buttonProps={{
+                className: ({ isEnter }) =>
+                    `${styles.itemBtn} ${isEnter && styles.itemBtnExpanded}`
+            }}
+            contentProps={{ className: styles.itemContent }}
+            panelProps={{ className: styles.itemPanel }}
+        />
+    );
+
+
     return (
         <>
             <nav className={`${shadowNav ? 'shadow-md' : 'shadow-none'} bg-white fixed top-0 duration-300 z-[100] w-full px-4 md:px-8 xl:px-[4rem] py-2 flex justify-between items-center`}>
@@ -109,7 +133,7 @@ const Navbar = () => {
 
 
                 {/* ================= Desktop ====================== */}
-                <div className='hidden md:flex items-center gap-8 text-sm'>
+                <div className='hidden xl:flex items-center gap-8 text-sm'>
 
                     <div className={
                         user.role.includes('admin')
@@ -150,6 +174,8 @@ const Navbar = () => {
                                 <div className="flex flex-col">
                                     <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
                                     <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
+                                    <a href='/mahasiswa/profile' className='hover:bg-gray-100 py-3 px-4'>Profile</a>
+                                    <a href='/mahasiswa/ipk' className='hover:bg-gray-100 py-3 px-4'>IPK</a>
                                 </div>
                             </div>
                         </div>
@@ -173,7 +199,7 @@ const Navbar = () => {
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
                                     <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Data Closing</a>
-                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
+                                    <a href='/marketing/cost-per-student' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
                                 </div>
                             </div>
                         </div>
@@ -210,7 +236,7 @@ const Navbar = () => {
                     </div>
 
 
-                    <div className={
+                    {/* <div className={
                         user.role.includes('admin')
                             || user.role.includes('projects')
                             ? 'hidden md:block relative group'
@@ -229,7 +255,7 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className='hidden md:block relative group'>
                         <button className="w-[2.2rem] h-[2.2rem] rounded-full overflow-clip">
@@ -325,7 +351,7 @@ const Navbar = () => {
 
 
                 {/* === Burger button === */}
-                <div className='block md:hidden z-[500]'>
+                <div className='block xl:hidden z-[500]'>
                     <FiMenu
                         className='text-2xl'
                         onClick={() => setOpenSidebar(true)}
@@ -340,8 +366,8 @@ const Navbar = () => {
             </nav>
 
             {/* SideBar Mobile */}
-            <div className={openSidebar ? 'fixed top-0 z-[100] h-screen w-screen bg-[#0000004a] flex justify-center items-center' : 'hidden'}>
-                <div className="bg-white rounded-sm w-[90%] p-6">
+            <div className={openSidebar ? 'fixed top-0 z-[100] h-screen w-screen bg-[#0000004a] flex justify-center items-center md:justify-end md:items-start md:pt-[5rem] md:pr-[4rem]' : 'hidden'}>
+                <div className="bg-white rounded-sm w-[90%] md:w-[70%] p-6 md:px-8">
 
                     <div className='flex justify-end'>
                         <FiX
@@ -351,7 +377,7 @@ const Navbar = () => {
                     </div>
 
                     <div className='flex items-center gap-4 border-b-[1px] border-gray-300 pb-4'>
-                        <div className="w-[4rem] h-[4rem] rounded-full relative overflow-clip group">
+                        <div className="w-[4rem] h-[4rem] md:w-[5rem] md:h-[5rem] rounded-full relative overflow-clip group">
                             <div className='bg-primary-blue h-full w-full text-white flex justify-center items-center'>
                                 <span className='text-4xl'>{user.username.charAt(0)}</span>
                             </div>
@@ -359,32 +385,27 @@ const Navbar = () => {
 
 
                         <div className='flex flex-col'>
-                            <span className='text-sm font-medium'>Selamat datang,</span>
-                            <span className='font-bold text-[1.3rem] break-words'>{user.username}</span>
-                            <span className='text-gray-400 text-sm break-words'>{user.email}</span>
+                            <span className='text-sm md:text-base font-medium'>Selamat datang,</span>
+                            <span className='font-bold text-[1.3rem] md:text-3xl break-words'>{user.username}</span>
+                            <span className='text-gray-400 text-sm md:text-base break-words'>{user.email}</span>
                         </div>
                     </div>
 
-                    <div className='py-4'>
-                        <ul>
-                            <li
-                                onClick={() => setOpenSubMenu('keuangan')}
-                                className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-base'>Keuangan</span>
-                                <MdKeyboardArrowDown className={openSubMenu === 'keuangan' ? `text-xl rotate-180` : 'text-xl'} />
-                            </li>
-                            <div className={openSubMenu === 'keuangan' ? 'flex flex-col text-sm' : 'hidden'}>
-                                <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Pengajuan PP dan PUM</a>
-                                <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
-                            </div>
+                    <div className='py-4 text-base md:text-xl'>
+                        <Accordion>
+                            <AccordionItem header="Keuangan">
+                                <div className="flex flex-col">
+                                    <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 p-2'>Pengajuan PP dan PUM</a>
+                                    <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 p-2'>Laporan Keuangan</a>
+                                </div>
+                            </AccordionItem>
 
-                            <li
-                                onClick={() => setOpenSubMenu('mahasiswa')}
-                                className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-base'>Mahasiswa</span>
-                                <MdKeyboardArrowDown className={openSubMenu === 'mahasiswa' ? `text-xl rotate-180` : 'text-xl'} />
-
-                            </li>
+                            <AccordionItem header="Mahasiswa">
+                                <div className="flex flex-col">
+                                    <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 p-2'>Data Mahasiswa</a>
+                                    <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 p-2'>Uang Kuliah</a>
+                                </div>
+                            </AccordionItem>
                             <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col text-sm' : 'hidden'}>
                                 <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
                                 <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
@@ -392,46 +413,28 @@ const Navbar = () => {
                                 <a href='/mahasiswa/ipk' className='hover:bg-gray-100 py-3 px-4'>IPK</a>
                             </div>
 
-                            <li
-                                onClick={() => setOpenSubMenu('marketing')}
-                                className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-base'>Marketing</span>
-                                <MdKeyboardArrowDown className={openSubMenu === 'marketing' ? `text-xl rotate-180` : 'text-xl'} />
+                            <AccordionItem header="Pegawai">
+                                <div className="flex flex-col">
+                                    <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 p-2'>Rasio Dosen</a>
+                                    <a href='/pegawai/presensi' className='hover:bg-gray-100 p-2'>Presensi</a>
+                                </div>
+                            </AccordionItem>
 
-                            </li>
-                            <div className={openSubMenu === 'marketing' ? "flex flex-col text-sm" : 'hidden'}>
-                                <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Data Closing</a>
-                                <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
+                            <div className='flex gap-2 justify-between items-center w-full'>
+                                <a href='/akreditasi' className='w-full py-2'>Akreditasi</a>
                             </div>
 
-                            <li
-                                onClick={() => setOpenSubMenu('pegawai')}
-                                className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-base'>Pegawai</span>
-                                <MdKeyboardArrowDown className={openSubMenu === 'pegawai' ? `text-xl rotate-180` : 'text-xl'} />
-                            </li>
-                            <div className={openSubMenu === 'pegawai' ? "flex flex-col text-sm" : 'hidden'}>
-                                <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 py-3 px-4'>Rasio Dosen</a>
-                                <a href='/pegawai/presensi' className='hover:bg-gray-100 py-3 px-4'>Presensi</a>
-                            </div>
+                            {/* <AccordionItem header="Projects">
+                                <div className="flex flex-col">
+                                    <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 p-2'>Hambalang Farm</a>
 
-                            <li className='flex gap-2 justify-between items-center py-2'>
-                                <a href='/akreditasi' className='text-base'>Akreditasi</a>
-                            </li>
+                                </div>
+                            </AccordionItem> */}
 
-                            <li
-                                onClick={() => setOpenSubMenu('projects')}
-                                className='flex gap-2 justify-between items-center py-2'>
-                                <span className='text-base'>Projects</span>
-                                <MdKeyboardArrowDown className={openSubMenu === 'projects' ? `text-xl rotate-180` : 'text-xl'} />
-                            </li>
-                            <div className={openSubMenu === 'projects' ? "flex flex-col text-sm" : 'hidden'}>
-                                <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 py-3 px-4'>Hambalang Farm</a>
-                            </div>
-                        </ul>
+                        </Accordion>
                     </div>
 
-                    <ul className='flex flex-col mt-6 text-[15px] text-base'>
+                    <ul className='flex flex-col mt-6 text-[15px] text-base md:text-xl'>
                         <li>
                             <a href={`/profile/${user._id}`}
                                 className='py-2 w-full flex'
@@ -462,11 +465,11 @@ const Navbar = () => {
 
             {/* Modal Log Out */}
             <div className={logOut ? 'fixed top-0 bg-shadow-modal w-screen h-screen z-[300] flex justify-center items-center' : 'hidden'}>
-                <div className='bg-white w-[95%] px-9 py-[3rem] rounded-md flex flex-col gap-9 items-center'>
+                <div className='bg-white w-[95%] md:w-auto px-9 py-[3rem] rounded-md flex flex-col gap-9 items-center'>
                     <p className='text-xl font-semibold'>Apakah kamu yakin untuk keluar?</p>
                     <div className='flex items-center gap-8 font-semibold'>
-                        <button className='hover:text-rose-500 text-primary-blue w-[10rem] py-2 text-center' onClick={handleLogOut}>Ya, saya yakin</button>
-                        <button className='text-white bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 w-[10rem] py-2 text-center' onClick={() => setLogOut(false)}>Tidak, kembali ke halaman</button>
+                        <button className='text-rose-500 hover:text-primary-blue w-[10rem] md:w-[16rem] py-2 text-center' onClick={handleLogOut}>Ya, saya yakin</button>
+                        <button className='text-white bg-primary-blue border-2 border-primary-blue hover:bg-transparent hover:text-primary-blue duration-300 w-[10rem] md:w-[16rem] py-2 text-center' onClick={() => setLogOut(false)}>Tidak, kembali ke halaman</button>
                     </div>
                 </div>
             </div>

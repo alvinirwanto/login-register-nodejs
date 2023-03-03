@@ -1,0 +1,29 @@
+.itemBtn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: left;
+  color: #000;
+  background-color: transparent;
+  border: none;
+}
+
+.itemBtnExpanded {
+  background-color: #e7e7e7;
+}
+
+.itemContent {
+  transition: height 0.2s ease-in-out;
+}
+
+.chevron {
+  margin-left: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.itemBtnExpanded .chevron {
+  transform: rotate(180deg);
+}
