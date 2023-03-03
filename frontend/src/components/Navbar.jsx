@@ -388,6 +388,8 @@ const Navbar = () => {
                             <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col text-sm' : 'hidden'}>
                                 <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
                                 <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
+                                <a href='/mahasiswa/profile' className='hover:bg-gray-100 py-3 px-4'>Profile</a>
+                                <a href='/mahasiswa/ipk' className='hover:bg-gray-100 py-3 px-4'>IPK</a>
                             </div>
 
                             <li
