@@ -152,6 +152,7 @@ const Navbar = () => {
                                 <div className="flex flex-col">
                                     <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Pengajuan PP dan PUM</a>
                                     <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
+                                    <a href='/keuangan/laporan-audit' className='hover:bg-gray-100 py-3 px-4'>Laporan Audit</a>
                                 </div>
                             </div>
                         </div>
@@ -397,6 +398,7 @@ const Navbar = () => {
                                 <div className="flex flex-col">
                                     <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 p-2'>Pengajuan PP dan PUM</a>
                                     <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 p-2'>Laporan Keuangan</a>
+                                    <a href='/keuangan/laporan-audit' className='hover:bg-gray-100 p-2'>Laporan Audit</a>
                                 </div>
                             </AccordionItem>
 

@@ -20,6 +20,7 @@ import Success from './pages/Success';
 import ProfileMahasiswa from './pages/mahasiswa/profile';
 import IPK from './pages/mahasiswa/ipk';
 import DataPegawai from './pages/pegawai/data-pegawai';
+import LaporanAudit from './pages/keuangan/laporan-audit';
 
 
 function App() {
@@ -71,6 +72,11 @@ function App() {
                 />
 
                 <Route
+                    path='/keuangan/laporan-audit'
+                    element={user ? <LaporanAudit /> : <Navigate to='/login' />}
+                />
+
+                <Route
                     path='/mahasiswa/data-mahasiswa'
                     element={user ? <Mahasiswa /> : <Navigate to='/login' />}
                 />
@@ -102,7 +108,7 @@ function App() {
 
                 <Route
                     path='/pegawai/data-pegawai'
-                    element={user ? <DataPegawai/> : <Navigate to='/login' />}
+                    element={user ? <DataPegawai /> : <Navigate to='/login' />}
                 />
 
                 <Route
