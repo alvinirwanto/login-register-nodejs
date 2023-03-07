@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Layout from '../../components/Layout'
-import { Document, Page } from "react-pdf/dist/esm/entry.vite";
 
 import pdfFile from './Audited_Financial_Statement_2017.pdf'
 
