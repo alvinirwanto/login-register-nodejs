@@ -1,8 +1,7 @@
 import Home from './pages/Home';
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import Login from './pages/Login';
-import Navbar from './components/Navbar';
 import Register from './pages/Register';
 import DataClosing from './pages/marketing/data-closing';
 import Guest from './pages/Guest';
