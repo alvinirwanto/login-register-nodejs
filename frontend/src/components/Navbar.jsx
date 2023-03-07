@@ -415,6 +415,7 @@ const Navbar = () => {
 
                             <AccordionItem header="Pegawai">
                                 <div className="flex flex-col">
+                                    <a href='/pegawai/data-pegawai' className='hover:bg-gray-100 p-2'>Data Pegawai</a>
                                     <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 p-2'>Rasio Dosen</a>
                                     <a href='/pegawai/presensi' className='hover:bg-gray-100 p-2'>Presensi</a>
                                 </div>

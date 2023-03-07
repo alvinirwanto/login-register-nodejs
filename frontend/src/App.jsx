@@ -20,6 +20,7 @@ import CostPerStudent from './pages/marketing/cost-per-student';
 import Success from './pages/Success';
 import ProfileMahasiswa from './pages/mahasiswa/profile';
 import IPK from './pages/mahasiswa/ipk';
+import DataPegawai from './pages/pegawai/data-pegawai';
 
 
 function App() {
@@ -98,6 +99,11 @@ function App() {
                 <Route
                     path='/marketing/cost-per-student'
                     element={user ? <CostPerStudent /> : <Navigate to='/login' />}
+                />
+
+                <Route
+                    path='/pegawai/data-pegawai'
+                    element={user ? <DataPegawai/> : <Navigate to='/login' />}
                 />
 
                 <Route
