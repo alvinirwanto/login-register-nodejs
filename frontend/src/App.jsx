@@ -1,8 +1,7 @@
 import Home from './pages/Home';
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import Login from './pages/Login';
-import Navbar from './components/Navbar';
 import Register from './pages/Register';
 import DataClosing from './pages/marketing/data-closing';
 import Guest from './pages/Guest';
@@ -21,6 +20,7 @@ import Success from './pages/Success';
 import ProfileMahasiswa from './pages/mahasiswa/profile';
 import IPK from './pages/mahasiswa/ipk';
 import DataPegawai from './pages/pegawai/data-pegawai';
+import LaporanAudit from './pages/keuangan/laporan-audit';
 
 
 function App() {
@@ -72,6 +72,11 @@ function App() {
                 />
 
                 <Route
+                    path='/keuangan/laporan-audit'
+                    element={user ? <LaporanAudit /> : <Navigate to='/login' />}
+                />
+
+                <Route
                     path='/mahasiswa/data-mahasiswa'
                     element={user ? <Mahasiswa /> : <Navigate to='/login' />}
                 />
@@ -103,7 +108,7 @@ function App() {
 
                 <Route
                     path='/pegawai/data-pegawai'
-                    element={user ? <DataPegawai/> : <Navigate to='/login' />}
+                    element={user ? <DataPegawai /> : <Navigate to='/login' />}
                 />
 
                 <Route
