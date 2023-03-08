@@ -10,7 +10,7 @@ export default function LaporanAudit() {
             pageTitle='Pengajuan PP dan PUM'
         >
             <div className='mt-[10rem]'>
-                <object className='w-full h-[90vh]' data={pdfFile} type="application/pdf"></object>
+                <object className='w-full h-screen' data={pdfFile} type="application/pdf"></object>
             </div>
         </Layout>
     )
