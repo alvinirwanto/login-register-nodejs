@@ -4,7 +4,7 @@ import Layout from '../../components/Layout'
 const DataPegawai = () => {
     return (
         <Layout
-            pageTitle='Data Pegawai'
+            pageTitle='Data Pegawai UMB'
         >
             <div className='pt-[10rem]'>
                 <iframe
