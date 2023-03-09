@@ -122,6 +122,11 @@ function App() {
                 />
 
                 <Route
+                    path='/pegawai/data-pegawai'
+                    element={user ? <DataPegawai /> : <Navigate to='/login' />}
+                />
+
+                <Route
                     path='/proyek/hambalang-farm'
                     element={user ? <HambalangFarm /> : <Navigate to='/login' />}
                 />
