@@ -153,6 +153,7 @@ const Navbar = () => {
                                     <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Pengajuan PP dan PUM</a>
                                     <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
                                     <a href='/keuangan/laporan-audit' className='hover:bg-gray-100 py-3 px-4'>Laporan Audit</a>
+                                    <a href='/keuangan/laporan-realisasi' className='hover:bg-gray-100 py-3 px-4'>Laporan Realisasi</a>
                                 </div>
                             </div>
                         </div>
@@ -400,6 +401,7 @@ const Navbar = () => {
                                     <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 p-2'>Pengajuan PP dan PUM</a>
                                     <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 p-2'>Laporan Keuangan</a>
                                     <a href='/keuangan/laporan-audit' className='hover:bg-gray-100 p-2'>Laporan Audit</a>
+                                    <a href='/keuangan/laporan-realisasi' className='hover:bg-gray-100 p-2'>Laporan Realisasi</a>
                                 </div>
                             </AccordionItem>
 
