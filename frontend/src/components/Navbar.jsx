@@ -150,7 +150,7 @@ const Navbar = () => {
                         <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
-                                    <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Pengajuan PP dan PUM</a>
+                                    <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Payment Request dan Cash Advance</a>
                                     <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
                                     <a href='/keuangan/laporan-audit' className='hover:bg-gray-100 py-3 px-4'>Laporan Audit</a>
                                 </div>
@@ -224,6 +224,27 @@ const Navbar = () => {
                                     <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 py-3 px-4'>Rasio Dosen</a>
                                     <a href='/pegawai/presensi' className='hover:bg-gray-100 py-3 px-4'>Presensi</a>
                                     <a href='/pegawai/data-pegawai' className='hover:bg-gray-100 py-3 px-4'>Data Pegawai</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={
+                        user.role.includes('admin')
+                            || user.role.includes('publikasi')
+                            ? 'hidden md:block relative group'
+                            : 'hidden'}>
+                        <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
+                            <div className='flex gap-1 justify-center items-center text-sm'>
+                                <span>Publikasi</span>
+                                <MdKeyboardArrowDown />
+                            </div>
+                        </button>
+
+                        <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
+                            <div className="w-[10rem] bg-white shadow-lg">
+                                <div className="flex flex-col">
+                                    <a href='/publikasi/publikasi-universitas' className='hover:bg-gray-100 py-3 px-4'>Publikasi Universitas</a>
                                 </div>
                             </div>
                         </div>
@@ -397,7 +418,7 @@ const Navbar = () => {
                         <Accordion>
                             <AccordionItem header="Keuangan">
                                 <div className="flex flex-col">
-                                    <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 p-2'>Pengajuan PP dan PUM</a>
+                                    <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 p-2'>Payment Request dan Cash Advance</a>
                                     <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 p-2'>Laporan Keuangan</a>
                                     <a href='/keuangan/laporan-audit' className='hover:bg-gray-100 p-2'>Laporan Audit</a>
                                 </div>
@@ -421,6 +442,12 @@ const Navbar = () => {
                                     <a href='/pegawai/rasio-dosen' className='hover:bg-gray-100 p-2'>Rasio Dosen</a>
                                     <a href='/pegawai/presensi' className='hover:bg-gray-100 p-2'>Presensi</a>
                                     <a href='/pegawai/data-pegawai' className='hover:bg-gray-100 p-2'>Data Pegawai</a>
+                                </div>
+                            </AccordionItem>
+
+                            <AccordionItem header="Publikasi">
+                                <div className="flex flex-col">
+                                    <a href='/publikasi/publikasi-universitas' className='hover:bg-gray-100 p-2'>Publikasi Universitas</a>
                                 </div>
                             </AccordionItem>
 
