@@ -21,6 +21,7 @@ import ProfileMahasiswa from './pages/mahasiswa/profile';
 import IPK from './pages/mahasiswa/ipk';
 import DataPegawai from './pages/pegawai/data-pegawai';
 import LaporanAudit from './pages/keuangan/laporan-audit';
+import LaporanRealisasi from './pages/keuangan/laporan-realisasi';
 import PublikasiUniversitas from './pages/publikasi/publikasi-universitas';
 
 
@@ -75,6 +76,11 @@ function App() {
                 <Route
                     path='/keuangan/laporan-audit'
                     element={user ? <LaporanAudit /> : <Navigate to='/login' />}
+                />
+
+                <Route
+                    path='/keuangan/laporan-realisasi'
+                    element={user ? <LaporanRealisasi /> : <Navigate to='/login' />}
                 />
 
                 <Route
