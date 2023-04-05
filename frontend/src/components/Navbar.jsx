@@ -137,6 +137,14 @@ const Navbar = () => {
 
                     <div className={
                         user.role.includes('admin')
+                            || user.role.includes('akreditasi')
+                            ? 'hidden md:block relative group'
+                            : 'hidden'}>
+                        <a href='/akreditasi' className='w-full text-sm bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold'>Akreditasi</a>
+                    </div>
+
+                    <div className={
+                        user.role.includes('admin')
                             || user.role.includes('keuangan')
                             ? 'hidden md:block relative group'
                             : 'hidden'}>
@@ -249,14 +257,6 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div className={
-                        user.role.includes('admin')
-                            || user.role.includes('akreditasi')
-                            ? 'hidden md:block relative group'
-                            : 'hidden'}>
-                        <a href='/akreditasi' className='w-full text-sm bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold'>Akreditasi</a>
                     </div>
 
 
@@ -417,6 +417,10 @@ const Navbar = () => {
 
                     <div className='py-4 text-base md:text-xl'>
                         <Accordion>
+                            <div className='flex gap-2 justify-between items-center w-full'>
+                                <a href='/akreditasi' className='w-full py-2'>Akreditasi</a>
+                            </div>
+
                             <AccordionItem header="Keuangan">
                                 <div className="flex flex-col">
                                     <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 p-2'>Payment Request dan Cash Advance</a>
@@ -452,10 +456,6 @@ const Navbar = () => {
                                     <a href='/publikasi/publikasi-universitas' className='hover:bg-gray-100 p-2'>Publikasi Universitas</a>
                                 </div>
                             </AccordionItem>
-
-                            <div className='flex gap-2 justify-between items-center w-full'>
-                                <a href='/akreditasi' className='w-full py-2'>Akreditasi</a>
-                            </div>
 
                             {/* <AccordionItem header="Projects">
                                 <div className="flex flex-col">
