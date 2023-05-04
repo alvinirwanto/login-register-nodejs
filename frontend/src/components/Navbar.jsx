@@ -209,7 +209,7 @@ const Navbar = () => {
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
                                     <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Data Closing</a>
-                                    <a href='/marketing/cost-per-student' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a>
+                                    {/* <a href='/marketing/cost-per-student' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a> */}
                                 </div>
                             </div>
                         </div>
@@ -434,6 +434,19 @@ const Navbar = () => {
                                 <div className="flex flex-col">
                                     <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 p-2'>Data Mahasiswa</a>
                                     <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 p-2'>Uang Kuliah</a>
+                                </div>
+                            </AccordionItem>
+                            <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col text-sm' : 'hidden'}>
+                                <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
+                                <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
+                                <a href='/mahasiswa/profile' className='hover:bg-gray-100 py-3 px-4'>Profile</a>
+                                <a href='/mahasiswa/ipk' className='hover:bg-gray-100 py-3 px-4'>IPK</a>
+                            </div>
+
+                            <AccordionItem header="Marketing">
+                                <div className="flex flex-col">
+                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 p-2'>Data Closing</a>
+                                    {/* <a href='/marketing/cost-per-student' className='hover:bg-gray-100 p-2'>Cost per Student</a> */}
                                 </div>
                             </AccordionItem>
                             <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col text-sm' : 'hidden'}>
