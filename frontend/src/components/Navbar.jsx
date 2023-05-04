@@ -259,6 +259,14 @@ const Navbar = () => {
                         </div>
                     </div>
 
+                    <div className={
+                        user.role.includes('admin')
+                            || user.role.includes('arsip')
+                            ? 'hidden md:block relative group'
+                            : 'hidden'}>
+                        <a href='https://fs.mercubuana.ac.id/drive' className='w-full text-sm bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold'>Arsip</a>
+                    </div>
+
 
                     {/* <div className={
                         user.role.includes('admin')
@@ -476,6 +484,10 @@ const Navbar = () => {
 
                                 </div>
                             </AccordionItem> */}
+
+                            <div className='flex gap-2 justify-between items-center w-full'>
+                                <a href='https://fs.mercubuana.ac.id/drive' className='w-full py-2'>Arsip</a>
+                            </div>
 
                         </Accordion>
                     </div>
