@@ -18,7 +18,7 @@ const DataClosing = () => {
                     className='w-full h-screen'
                     // width="600" 
                     // height="373.5" 
-                    src="https://app.powerbi.com/view?r=eyJrIjoiNmViYzdlM2YtOGI4Mi00OWY3LThhZmItMTBlOTg3NTNmMDdlIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiYzI4ODRlMWMtZmQzOC00NjZlLTkxN2EtZjFlMDFkYTUwYTdjIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D&pageName=ReportSection2b3fefe0ec91aa4553da"
                     frameborder="0"
                     allowFullScreen="true"></iframe>
 
