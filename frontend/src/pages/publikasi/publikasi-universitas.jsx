@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 
-const PermintaanPembayaran = () => {
+export default function PublikasiUniversitas() {
     return (
         <Layout
             pageTitle='Payment Request dan Cash Advance'
@@ -11,10 +11,8 @@ const PermintaanPembayaran = () => {
                     title="Pengajuan PP dan PUM"
                     className='w-full h-screen scale-[1.1]'
                     // width="600" height="373.5"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiMGQ5Mjg4Y2EtMmM4ZC00MGNhLTkwZjctMGFlYWJkNjZkNGJmIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMWM4YTIxOTItNjcxMC00ZWExLWI1MDAtMzJmM2NmY2FhNGM1IiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
             </div>
         </Layout>
     )
 }
-
-export default PermintaanPembayaran

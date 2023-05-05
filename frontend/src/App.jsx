@@ -22,6 +22,7 @@ import IPK from './pages/mahasiswa/ipk';
 import DataPegawai from './pages/pegawai/data-pegawai';
 import LaporanAudit from './pages/keuangan/laporan-audit';
 import LaporanRealisasi from './pages/keuangan/laporan-realisasi';
+import PublikasiUniversitas from './pages/publikasi/publikasi-universitas';
 
 
 function App() {
@@ -135,6 +136,11 @@ function App() {
                 <Route
                     path='/proyek/hambalang-farm'
                     element={user ? <HambalangFarm /> : <Navigate to='/login' />}
+                />
+
+                <Route
+                    path='/publikasi/publikasi-universitas'
+                    element={user ? <PublikasiUniversitas /> : <Navigate to='/login' />}
                 />
 
                 <Route

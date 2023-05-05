@@ -218,6 +218,18 @@ const Register = () => {
                                             <input
                                                 type="checkbox"
                                                 name="role"
+                                                value="publikasi"
+                                                className='cursor-pointer scale-150'
+                                                onChange={handleChange}
+                                                checked={data.role.includes('publikasi')}
+                                                disabled={activeAdmin}
+                                            />
+                                            <label>Publikasi</label>
+                                        </div>
+                                        <div className='flex justify-start items-center gap-2'>
+                                            <input
+                                                type="checkbox"
+                                                name="role"
                                                 value="projects"
                                                 className='cursor-pointer scale-150'
                                                 onChange={handleChange}
