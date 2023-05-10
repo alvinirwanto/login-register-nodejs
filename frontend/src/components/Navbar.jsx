@@ -254,6 +254,7 @@ const Navbar = () => {
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
                                     <a href='/publikasi/publikasi-universitas' className='hover:bg-gray-100 py-3 px-4'>Publikasi Universitas</a>
+                                    <a href='/publikasi/pengabdian-penelitian' className='hover:bg-gray-100 py-3 px-4'>Pengabdian dan Penelitian</a>                                
                                 </div>
                             </div>
                         </div>
@@ -475,6 +476,7 @@ const Navbar = () => {
                             <AccordionItem header="Publikasi">
                                 <div className="flex flex-col">
                                     <a href='/publikasi/publikasi-universitas' className='hover:bg-gray-100 p-2'>Publikasi Universitas</a>
+                                    <a href='/publikasi/pengabdian-penelitian' className='hover:bg-gray-100 p-2'>Pengabdian dan Penelitian</a>
                                 </div>
                             </AccordionItem>
 

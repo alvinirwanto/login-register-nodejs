@@ -23,6 +23,7 @@ import DataPegawai from './pages/pegawai/data-pegawai';
 import LaporanAudit from './pages/keuangan/laporan-audit';
 import LaporanRealisasi from './pages/keuangan/laporan-realisasi';
 import PublikasiUniversitas from './pages/publikasi/publikasi-universitas';
+import PengabdianPenelitian from './pages/publikasi/pengabdian-penelitian';
 
 
 function App() {
@@ -142,6 +143,12 @@ function App() {
                     path='/publikasi/publikasi-universitas'
                     element={user ? <PublikasiUniversitas /> : <Navigate to='/login' />}
                 />
+
+                <Route
+                    path='/publikasi/pengabdian-penelitian'
+                    element={user ? <PengabdianPenelitian /> : <Navigate to='/login' />}
+                />
+
 
                 <Route
                     path='/akreditasi'
