@@ -5,7 +5,7 @@ import Layout from '../../components/Layout'
 const UangKuliah = () => {
     return (
         <Layout
-            pageTitle='Data Keuangan'>
+            pageTitle='Uang Kuliah'>
             <div className='mt-[10rem]'>
                 <iframe
                     title="Dashboard Keuangan Mahasiswa"
