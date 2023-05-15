@@ -8,7 +8,7 @@ const Presensi = () => {
         >
             <div className='pt-[10rem]'>
                 <iframe
-                    title="Data Closing 230223"
+                    title="Presensi"
                     className='w-full h-screen'
                     // width="600" height="373.5" 
                     src="https://app.powerbi.com/view?r=eyJrIjoiNWE4YzU0ZDEtOGJlYS00NDkzLWI4MzUtMzIzM2QzNjUwNWMyIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" 
