@@ -11,7 +11,7 @@ const Presensi = () => {
                     title="Data Closing 230223"
                     className='w-full h-screen'
                     // width="600" height="373.5" 
-                    src="https://app.powerbi.com/view?r=eyJrIjoiZDFhODUwZDItNjNmNC00NmIyLTk5ZjMtM2NlNDY3N2RiOGE3IiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" 
+                    src="https://app.powerbi.com/view?r=eyJrIjoiNWE4YzU0ZDEtOGJlYS00NDkzLWI4MzUtMzIzM2QzNjUwNWMyIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" 
                     frameborder="0"
                     allowFullScreen="true"></iframe>
             </div>
