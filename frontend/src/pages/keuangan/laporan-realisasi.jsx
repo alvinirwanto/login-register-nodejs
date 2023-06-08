@@ -11,7 +11,7 @@ const LaporanRealisasi = () => {
                     title="Laporan Realisasi"
                     className='w-full h-screen scale-[1.1]'
                     // width="600" height="373.5"0
-                    src="https://app.powerbi.com/view?r=eyJrIjoiY2EyZGFmZmMtODBmMy00NWI0LTg2MzQtNzRiODRlNWEyODdiIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    src="https://app.powerbi.com/view?r=eyJrIjoiYzFmNjg5OGMtNWQyOC00YzcwLWEzYTYtYWFhYzIxZDgxNGE3IiwidCI6ImYzMTEzNmJjLWE3OTAtNDUwZi04Y2NiLWNhZDNmYWFlNDRmNyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
             </div>
         </Layout>
     )

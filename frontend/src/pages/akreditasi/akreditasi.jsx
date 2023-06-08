@@ -11,7 +11,7 @@ const Akreditasi = () => {
                     title="Report Section"
                     // width="600" height="486" 
                     className='w-full h-screen'
-                    src="https://app.powerbi.com/view?r=eyJrIjoiZDM5YTAyOGMtY2EzZS00OTU5LWJiMmUtYmViNjhmODk4ZWM2IiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    src="https://app.powerbi.com/view?r=eyJrIjoiYmZiODIzZTAtMjc1NS00MjZiLTk1NmYtYjBkZGJiNGI1ZDcxIiwidCI6ImYzMTEzNmJjLWE3OTAtNDUwZi04Y2NiLWNhZDNmYWFlNDRmNyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
 
             </div>
         </Layout>

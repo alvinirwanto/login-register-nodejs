@@ -11,7 +11,7 @@ const IPK = () => {
                     title="Dashboard IPK"
                     className='w-full h-screen scale-[1.1]'
                     // width="600" height="373.5"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiOTczOTE0YTgtMjRkOC00NDQ4LWFkMDctZmQ1MGEyNDg0NjIyIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    src="https://app.powerbi.com/view?r=eyJrIjoiNjlkMDliMzYtYjQ5Yy00ZTU5LTg4ZTQtNWJjOTY0YmMxNThmIiwidCI6ImYzMTEzNmJjLWE3OTAtNDUwZi04Y2NiLWNhZDNmYWFlNDRmNyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
             </div>
         </Layout>
     )

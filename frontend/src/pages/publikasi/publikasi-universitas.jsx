@@ -11,7 +11,7 @@ export default function PublikasiUniversitas() {
                     title="Publikasi Universitas"
                     className='w-full h-screen scale-[1.1]'
                     // width="600" height="373.5"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiMWM4YTIxOTItNjcxMC00ZWExLWI1MDAtMzJmM2NmY2FhNGM1IiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    src="https://app.powerbi.com/view?r=eyJrIjoiOTgwNjhlYmMtNjVjOC00NGI3LThjNDgtNDQ2MTYxNWNhNWVhIiwidCI6ImYzMTEzNmJjLWE3OTAtNDUwZi04Y2NiLWNhZDNmYWFlNDRmNyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
             </div>
         </Layout>
     )

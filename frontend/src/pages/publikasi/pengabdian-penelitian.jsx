@@ -11,7 +11,7 @@ export default function PengabdianPenelitian() {
                     title="Pengabdian Penelitian"
                     className='w-full h-screen scale-[1.1]'
                     // width="600" height="373.5"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiMzczYTQ5OTMtMjIwOS00ZjY1LTk5NjEtYmNkY2Y1M2I3MWQyIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMjQyNTM5ODgtZmRkNC00Y2YyLTlhODktNjJmMDhmMjUzYjJhIiwidCI6ImYzMTEzNmJjLWE3OTAtNDUwZi04Y2NiLWNhZDNmYWFlNDRmNyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
             </div>
         </Layout>
     )

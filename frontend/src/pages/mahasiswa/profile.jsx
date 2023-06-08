@@ -11,7 +11,7 @@ const ProfileMahasiswa = () => {
                     title="Dashboard Profile"
                     className='w-full h-screen scale-[1.1]'
                     // width="600" height="373.5"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiNjQ2YmZkNGUtZTU1Yy00MGMyLWEwMjYtMzdkZDFjZWRjOWFhIiwidCI6ImZlOTZiY2VlLTc0YjEtNDQxNS1hNWE4LTZiYmJlNGNmMjUxMiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMDNlNDRmOWQtOTc2NS00ZDZhLTk3MjEtMDU3MjYyNjBmYTVjIiwidCI6ImYzMTEzNmJjLWE3OTAtNDUwZi04Y2NiLWNhZDNmYWFlNDRmNyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
             </div>
         </Layout>
     )
