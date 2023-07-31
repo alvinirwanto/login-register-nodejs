@@ -146,7 +146,7 @@ const Navbar = () => {
                     <div className={
                         user.role.includes('admin')
                             || user.role.includes('keuangan')
-                            ? 'hidden md:block relative group'
+                            ? 'hidden md:block relative group/main'
                             : 'hidden'}>
                         <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
                             <div className='flex gap-1 justify-center items-center text-sm'>
@@ -155,12 +155,23 @@ const Navbar = () => {
                             </div>
                         </button>
 
-                        <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
+                        <div className="absolute z-10 hidden bg-grey-200 group-hover/main:block">
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
                                     <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Payment Request dan Cash Advance</a>
                                     <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
-                                    <a href='/keuangan/laporan-audit' className='hover:bg-gray-100 py-3 px-4'>Laporan Audit</a>
+                                    <div className="group/sub relative">
+                                        <button className="w-full text-left hover:bg-gray-100 py-3 px-4 focus:outline-none">
+                                            Laporan Audit
+                                        </button>
+                                        <div className="absolute bg-white hidden bg-grey-200 group-hover/sub:block w-[10rem] top-0 left-full shadow-lg">
+                                            <div className="flex flex-col">
+                                                <a href='/keuangan/laporan-audit/2017' className='hover:bg-gray-100 py-3 px-4'>2017</a>
+                                                <a href='/keuangan/laporan-audit/2018' className='hover:bg-gray-100 py-3 px-4'>2018</a>
+                                                <a href='/keuangan/laporan-audit/2019' className='hover:bg-gray-100 py-3 px-4'>2019</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <a href='/keuangan/laporan-realisasi' className='hover:bg-gray-100 py-3 px-4'>Laporan Realisasi</a>
                                 </div>
                             </div>
@@ -254,7 +265,7 @@ const Navbar = () => {
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
                                     <a href='/publikasi/publikasi-universitas' className='hover:bg-gray-100 py-3 px-4'>Publikasi Universitas</a>
-                                    <a href='/publikasi/pengabdian-penelitian' className='hover:bg-gray-100 py-3 px-4'>Pengabdian dan Penelitian</a>                                
+                                    <a href='/publikasi/pengabdian-penelitian' className='hover:bg-gray-100 py-3 px-4'>Pengabdian dan Penelitian</a>
                                 </div>
                             </div>
                         </div>
@@ -434,7 +445,17 @@ const Navbar = () => {
                                 <div className="flex flex-col">
                                     <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 p-2'>Payment Request dan Cash Advance</a>
                                     <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 p-2'>Laporan Keuangan</a>
-                                    <a href='/keuangan/laporan-audit' className='hover:bg-gray-100 p-2'>Laporan Audit</a>
+
+                                    <Accordion className='ml-2'>
+                                        <AccordionItem header='Laporan Audit'>
+                                            <div className="flex flex-col gap-1">
+                                            <a href='/keuangan/laporan-audit/2017' className='hover:bg-gray-100 p-2'>2017</a>
+                                            <a href='/keuangan/laporan-audit/2018' className='hover:bg-gray-100 p-2'>2018</a>
+                                            <a href='/keuangan/laporan-audit/2019' className='hover:bg-gray-100 p-2'>2019</a>
+                                            </div>
+                                        </AccordionItem>
+                                    </Accordion>
+
                                     <a href='/keuangan/laporan-realisasi' className='hover:bg-gray-100 p-2'>Laporan Realisasi</a>
                                 </div>
                             </AccordionItem>

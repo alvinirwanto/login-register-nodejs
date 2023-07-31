@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Layout from '../../components/Layout'
 
-import pdfFile from './Audited_Financial_Statement_2017.pdf'
+import pdfFile from './31_Agus_2018_YMB_Laporan_Audit.pdf'
 
 
-export default function LaporanAudit() {
+export default function LaporanAudit2018() {
     return (
         <Layout
             pageTitle='Pengajuan PP dan PUM'

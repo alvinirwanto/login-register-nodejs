@@ -20,10 +20,12 @@ import Success from './pages/Success';
 import ProfileMahasiswa from './pages/mahasiswa/profile';
 import IPK from './pages/mahasiswa/ipk';
 import DataPegawai from './pages/pegawai/data-pegawai';
-import LaporanAudit from './pages/keuangan/laporan-audit';
 import LaporanRealisasi from './pages/keuangan/laporan-realisasi';
 import PublikasiUniversitas from './pages/publikasi/publikasi-universitas';
 import PengabdianPenelitian from './pages/publikasi/pengabdian-penelitian';
+import LaporanAudit2017 from './pages/keuangan/laporan-audit-2017';
+import LaporanAudit2018 from './pages/keuangan/laporan-audit-2018';
+import LaporanAudit2019 from './pages/keuangan/laporan-audit-2019';
 
 
 function App() {
@@ -75,8 +77,18 @@ function App() {
                 />
 
                 <Route
-                    path='/keuangan/laporan-audit'
-                    element={user ? <LaporanAudit /> : <Navigate to='/login' />}
+                    path='/keuangan/laporan-audit/2017'
+                    element={user ? <LaporanAudit2017 /> : <Navigate to='/login' />}
+                />
+
+                <Route
+                    path='/keuangan/laporan-audit/2018'
+                    element={user ? <LaporanAudit2018 /> : <Navigate to='/login' />}
+                />
+
+                <Route
+                    path='/keuangan/laporan-audit/2019'
+                    element={user ? <LaporanAudit2019 /> : <Navigate to='/login' />}
                 />
 
                 <Route
