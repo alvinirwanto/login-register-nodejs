@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { FiMenu, FiX } from 'react-icons/fi'
-import { MdKeyboardArrowDown } from 'react-icons/md'
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from 'react-icons/md'
 
 import { logout } from '../action/AuthAction'
 import { uploadImage } from '../action/UploadAction'
@@ -161,8 +161,9 @@ const Navbar = () => {
                                     <a href='/keuangan/permintaan-pembayaran' className='hover:bg-gray-100 py-3 px-4'>Payment Request dan Cash Advance</a>
                                     <a href='/keuangan/laporan-keuangan' className='hover:bg-gray-100 py-3 px-4'>Laporan Keuangan</a>
                                     <div className="group/sub relative">
-                                        <button className="w-full text-left hover:bg-gray-100 py-3 px-4 focus:outline-none">
-                                            Laporan Audit
+                                        <button className="w-full flex justify-between items-center text-left hover:bg-gray-100 py-3 px-4 focus:outline-none">
+                                            <span>Laporan Audit</span>
+                                            <MdKeyboardArrowRight />
                                         </button>
                                         <div className="absolute bg-white hidden bg-grey-200 group-hover/sub:block w-[10rem] top-0 left-full shadow-lg">
                                             <div className="flex flex-col">
@@ -449,9 +450,9 @@ const Navbar = () => {
                                     <Accordion className='ml-2'>
                                         <AccordionItem header='Laporan Audit'>
                                             <div className="flex flex-col gap-1">
-                                            <a href='/keuangan/laporan-audit/2017' className='hover:bg-gray-100 p-2'>2017</a>
-                                            <a href='/keuangan/laporan-audit/2018' className='hover:bg-gray-100 p-2'>2018</a>
-                                            <a href='/keuangan/laporan-audit/2019' className='hover:bg-gray-100 p-2'>2019</a>
+                                                <a href='/keuangan/laporan-audit/2017' className='hover:bg-gray-100 p-2'>2017</a>
+                                                <a href='/keuangan/laporan-audit/2018' className='hover:bg-gray-100 p-2'>2018</a>
+                                                <a href='/keuangan/laporan-audit/2019' className='hover:bg-gray-100 p-2'>2019</a>
                                             </div>
                                         </AccordionItem>
                                     </Accordion>

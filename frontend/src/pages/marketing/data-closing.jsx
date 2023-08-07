@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../../components/Layout'
 
 const DataClosing = () => {
-   g return (
+   return (
         <Layout
             pageTitle='Data Closing'
         >
