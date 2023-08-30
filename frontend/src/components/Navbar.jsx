@@ -476,7 +476,7 @@ const Navbar = () => {
 
                             <AccordionItem header="Marketing">
                                 <div className="flex flex-col">
-                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 p-2'>Data Closing</a>
+                                    <a href='/marketing/data-mahasiswa-baru' className='hover:bg-gray-100 p-2'>Data Mahasiswa Baru</a>
                                     {/* <a href='/marketing/cost-per-student' className='hover:bg-gray-100 p-2'>Cost per Student</a> */}
                                 </div>
                             </AccordionItem>

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import Login from './pages/Login';
 import Register from './pages/Register';
-import DataClosing from './pages/marketing/data-closing';
+import DataMahasiswaBaru from './pages/marketing/data-mahasiswa-baru';
 import Guest from './pages/Guest';
 import ResetPass from './pages/Profile';
 import Profile from './pages/Profile';
