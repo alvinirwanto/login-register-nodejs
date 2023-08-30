@@ -220,7 +220,7 @@ const Navbar = () => {
                         <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
                             <div className="w-[10rem] bg-white shadow-lg">
                                 <div className="flex flex-col">
-                                    <a href='/marketing/data-closing' className='hover:bg-gray-100 py-3 px-4'>Data Closing</a>
+                                    <a href='/marketing/data-mahasiswa-baru' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa Baru</a>
                                     {/* <a href='/marketing/cost-per-student' className='hover:bg-gray-100 py-3 px-4'>Cost per Student</a> */}
                                 </div>
                             </div>
