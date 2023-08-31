@@ -117,8 +117,8 @@ function App() {
                 />
 
                 <Route
-                    path='/marketing/data-closing'
-                    element={user ? <DataClosing /> : <Navigate to='/login' />}
+                    path='/marketing/data-mahasiswa-baru'
+                    element={user ? <DataMahasiswaBaru /> : <Navigate to='/login' />}
                 />
 
                 <Route
