@@ -23,7 +23,7 @@ services:
     env_file:
       - .env
     ports:
-      - 8181:8181
+      - 8080:8080
     links:
       - backend
 
