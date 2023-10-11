@@ -11,7 +11,7 @@ const DataPegawai = () => {
                     title="Data Pegawai Dashboard"
                     // width="600" height="373.5" 
                     className='w-full h-screen'
-                    src="https://app.powerbi.com/view?r=eyJrIjoiZThjMDEwYzUtYzY4Zi00MTRkLTk4ODgtZTc4M2IyOWY3NDBjIiwidCI6ImYzMTEzNmJjLWE3OTAtNDUwZi04Y2NiLWNhZDNmYWFlNDRmNyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMGE0MWU0MzctZDkwMi00YzU0LTg2NzQtYzc3NTM2YjIxOGUwIiwidCI6ImYzMTEzNmJjLWE3OTAtNDUwZi04Y2NiLWNhZDNmYWFlNDRmNyIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
             </div>
         </Layout>
     )
