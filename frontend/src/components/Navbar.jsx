@@ -280,83 +280,22 @@ const Navbar = () => {
                         <a href='https://fs.mercubuana.ac.id/drive' className='w-full text-sm bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold'>Arsip</a>
                     </div>
 
-
-                    {/* <div className={
-                        user.role.includes('admin')
-                            || user.role.includes('projects')
-                            ? 'hidden md:block relative group'
-                            : 'hidden'}>
-                        <button className="w-full text-base bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-semibold">
-                            <div className='flex gap-1 justify-center items-center text-sm'>
-                                <span>Projects</span>
-                                <MdKeyboardArrowDown />
-                            </div>
-                        </button>
-
-                        <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
-                            <div className="w-[10rem] bg-white shadow-lg">
-                                <div className="flex flex-col">
-                                    <a href='/proyek/hambalang-farm' className='hover:bg-gray-100 py-3 px-4'>Hambalang Farm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
-
                     <div className='hidden md:block relative group'>
                         <button className="w-[2.2rem] h-[2.2rem] rounded-full overflow-clip">
                             <div className='bg-primary-blue h-full w-full text-white flex justify-center items-center'>
                                 <span className='text-xl'>{user.username.charAt(0)}</span>
                             </div>
-                            {/* <img
-                                src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
-                                alt='profile'
-                                className='object-cover w-full h-full'
-                            /> */}
                         </button>
 
                         <div className="absolute -right-10 z-10 hidden bg-grey-200 group-hover:block">
                             <div className="bg-white shadow-lg w-[390px] p-4">
                                 <div className='flex items-center gap-4'>
                                     <div
-                                        // onMouseOver={() => setShowEditPhoto(true)}
-                                        // onMouseLeave={() => setShowEditPhoto(false)}
-                                        // onClick={() => setChangeProfilePict(true)}
                                         className="w-[5rem] h-[5rem] rounded-full relative overflow-clip group">
-                                        {/* <img
-                                            src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + 'defaultProfile.png'}
-                                            alt='profile'
-                                            className='object-cover w-full h-full'
-                                        /> */}
-
                                         <div className='bg-primary-blue h-full w-full text-white flex justify-center items-center'>
                                             <span className='text-4xl'>{user.username.charAt(0)}</span>
                                         </div>
-                                        {/* <div className={showEditPhoto ? 'bg-[#00000060] w-full h-full hidden group-hover:flex items-center justify-center absolute top-0 cursor-pointer' : 'hidden'}>
-                                            <p className='text-xs text-white text-center'>
-                                                Ganti Foto
-                                            </p>
-                                        </div> */}
                                     </div>
-
-                                    {/* <form className={changeProfilePict ? 'flex flex-col justify-center' : 'hidden'}>
-                                        <input type="file" name="profileImage" onChange={onImageChange} />
-                                        <div className='grid grid-cols-2 gap-4 mt-6'>
-                                            <button
-                                                className='button-primary'
-                                                type='submit'
-                                                onClick={handleSubmit}
-                                            >
-                                                Simpan
-                                            </button>
-                                            <button
-                                                className='text-rose-500 text-center font-semibold w-full'
-                                                onClick={exitEdit}
-                                            >
-                                                Batal
-                                            </button>
-                                        </div>
-                                    </form> */}
-
 
                                     <div className='flex flex-col gap-[5px]'>
                                         <span className='text-sm font-medium mb-1'>Selamat datang,</span>
@@ -403,11 +342,7 @@ const Navbar = () => {
                     />
                 </div>
 
-                {/* ================= Tablet ====================== */}
-
-                {/* ================= Mobile ====================== */}
-
-
+                {/* ================= Tablet & Mobile ====================== */}
             </nav>
 
             {/* SideBar Mobile */}
@@ -465,14 +400,10 @@ const Navbar = () => {
                                 <div className="flex flex-col">
                                     <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 p-2'>Data Mahasiswa</a>
                                     <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 p-2'>Uang Kuliah</a>
+                                    <a href='/mahasiswa/profile' className='hover:bg-gray-100 p-2'>Profile</a>
+                                    <a href='/mahasiswa/ipk' className='hover:bg-gray-100 p-2'>IPK</a>
                                 </div>
                             </AccordionItem>
-                            <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col text-sm' : 'hidden'}>
-                                <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
-                                <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
-                                <a href='/mahasiswa/profile' className='hover:bg-gray-100 py-3 px-4'>Profile</a>
-                                <a href='/mahasiswa/ipk' className='hover:bg-gray-100 py-3 px-4'>IPK</a>
-                            </div>
 
                             <AccordionItem header="Marketing">
                                 <div className="flex flex-col">
@@ -480,12 +411,6 @@ const Navbar = () => {
                                     {/* <a href='/marketing/cost-per-student' className='hover:bg-gray-100 p-2'>Cost per Student</a> */}
                                 </div>
                             </AccordionItem>
-                            <div className={openSubMenu === 'mahasiswa' ? 'flex flex-col text-sm' : 'hidden'}>
-                                <a href='/mahasiswa/data-mahasiswa' className='hover:bg-gray-100 py-3 px-4'>Data Mahasiswa</a>
-                                <a href='/mahasiswa/uang-kuliah' className='hover:bg-gray-100 py-3 px-4'>Uang Kuliah</a>
-                                <a href='/mahasiswa/profile' className='hover:bg-gray-100 py-3 px-4'>Profile</a>
-                                <a href='/mahasiswa/ipk' className='hover:bg-gray-100 py-3 px-4'>IPK</a>
-                            </div>
 
                             <AccordionItem header="Pegawai">
                                 <div className="flex flex-col">
@@ -542,7 +467,6 @@ const Navbar = () => {
                     </ul>
                 </div>
             </div>
-
 
 
             {/* Modal Log Out */}
